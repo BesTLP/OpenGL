@@ -459,11 +459,10 @@ PS:蓝色部分为可修改环节。
 ## 顶点输入
 
 ```c++
-float vertices[] =
-{
-    -0.5f, -0.5f, 0.0f,
-     0.5f, -0.5f, 0.0f,
-     0.0f,  0.5f, 0.0f
+float vertices[] = {
+       -0.5f, -0.5f, 0.0f, // left  
+        0.5f, -0.5f, 0.0f, // right 
+        0.0f,  0.5f, 0.0f  // top   
 };
 ```
 
@@ -703,17 +702,535 @@ glDeleteShader(fragmentShader);
 
 ## 链接顶点属性
 
+顶点着色器允许我们指定任何以顶点属性为形式的输入，我们必须手动指定输入的哪一个部分对应顶点着色器的哪一个顶点属性。
+
+我们必须在渲染之前就指定OpenGL如何解释这个顶点数据。
+
+![image-20241203130546599](C:\Users\windows\AppData\Roaming\Typora\typora-user-images\image-20241203130546599.png)
+
+- 位置数据被储存为32位（4字节）浮点值。
+
+  >```c++
+  >sizeof(float) = 4;
+  >```
+
+- 每个位置包含3个这样的值。
+
+- 在这3个值之间没有空隙（或其他值）。这几个值在数组中紧密排列(Tightly Packed)。
+
+- 数据中第一个值在缓冲开始的位置。
+
+我们可以使用glVertexAttribPointer函数告诉OpenGL应该如何解析顶点数据。
+
+```c++
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+```
+
+![image-20241203131353824](C:\Users\windows\AppData\Roaming\Typora\typora-user-images\image-20241203131353824.png)
+
+第一个参数指定我们要配置的顶点属性。还记得我们在顶点着色器中使用`layout(location = 0)`定义了position顶点属性的位置值(Location)吗？它可以把顶点属性的位置值设置为`0`。因为我们希望把数据传递到这一个顶点属性中，所以这里我们传入`0`。
+
+第二个参数指定顶点属性的大小。顶点属性是一个`vec3`，它由3个值组成，所以大小是3。
+
+**每个顶点属性从一个VBO管理的内存中获得它的数据**，而具体是从哪个VBO（程序中可以有多个VBO）获取则是通过在调用**glVertexAttribPointer时绑定到GL_ARRAY_BUFFER的VBO决定的。**由于在**调用glVertexAttribPointer之前绑定的是先前定义的VBO对象，顶点属性`0`现在会链接到它的顶点数据。**
+
+在 OpenGL 中，`glVertexAttribPointer` 函数的第一个参数指定了顶点属性的索引位置（index），即你在顶点着色器中使用 `layout(location = index)` 时指定的 `index`。
+
+为什么这个 `index` 一定是 `0`，而不是其他的数字呢？这是因为你在顶点着色器中定义了特定的顶点属性，它们的 `index` 值由你在着色器中设置的 `layout(location = n)` 来控制。比如，定义位置属性时通常使用 `layout(location = 0)` 来指定 `position` 属性的索引为 0。
+
+具体的例子如下：
+
+```c++
+#version 330 core
+
+layout(location = 0) in vec3 position;   // 位置属性
+layout(location = 1) in vec3 color;      // 颜色属性
+layout(location = 2) in vec2 texCoord;   // 纹理坐标属性
+
+void main() {
+    gl_Position = vec4(position, 1.0);
+}
 
 
+// 绑定到位置0
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
+glEnableVertexAttribArray(0);  // 激活位置属性
 
+// 绑定到位置1
+glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, color));
+glEnableVertexAttribArray(1);  // 激活颜色属性
 
+// 绑定到位置2
+glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, texCoord));
+glEnableVertexAttribArray(2);  // 激活纹理坐标属性
 
+```
 
+**`size`**
 
+- 指定每个顶点属性包含的分量数。可以是 1, 2, 3, 4。
+  - 对于位置属性 `vec3 position;`，`size` 应为 3（表示三个浮动分量）。
+  - 对于颜色属性 `vec4 color;`，`size` 应为 4（表示四个浮动分量）。
 
+第三个参数指定数据的类型，这里是GL_FLOAT(GLSL中`vec*`都是由浮点数值组成的)。
 
+**`type`**
 
+- 意义
 
+  : 指定数组中每个组件的数据类型。常见的类型包括：
 
+  - `GL_FLOAT`：表示浮动数据（如位置、法线、颜色等）。
+  - `GL_INT`：表示整数数据（如纹理坐标）。
+  - `GL_UNSIGNED_BYTE`：表示无符号字节数据。
 
+- **例子**: 对于位置数据，通常使用 `GL_FLOAT`。
+
+下个参数定义我们是否希望数据被标准化(Normalize)。如果我们设置为GL_TRUE，所有数据都会被映射到**0（对于有符号型signed数据是-1）到1之间**。我们把它设置为GL_FALSE。
+
+**`normalized`**
+
+- **意义**: 如果为 `GL_TRUE`，表示将整数类型的值归一化到 [0,1] 或 [-1,1] 范围内。对于浮动数据，通常设置为 `GL_FALSE`。
+- **例子**: 对于整数类型（如 `GL_BYTE` 或 `GL_UNSIGNED_BYTE`），通常使用归一化，以确保它们映射到浮动类型时保持有效范围。
+
+第五个参数叫做步长(Stride)，它告诉我们在连续的顶点属性组之间的间隔。由于下个组位置数据在3个`float`之后，我们把步长设置为`3 * sizeof(float)`。要注意的是由于我们知道这个数组是紧密排列的（在两个顶点属性之间没有空隙）我们也可以设置为0来让OpenGL决定具体步长是多少（只有当数值是紧密排列时才可用）。一旦我们有更多的顶点属性，我们就必须更小心地定义每个顶点属性之间的间隔，我们在后面会看到更多的例子（译注: 这个参数的意思简单说就是从这个属性第二次出现的地方到整个数组0位置之间有多少字节）。
+
+**`stride`**：
+假设每个顶点包含了多个属性，比如**位置、纹理坐标、法向量**等。`stride`的作用是指定从一个顶点到下一个顶点的字节偏移量。假设你的顶点数据按以下结构存储：
+
+- 3个 `float` 用来存储位置 (每个 `float` 占4字节，共12字节)
+- 2个 `float` 用来存储纹理坐标 (共8字节)
+- 3个 `float` 用来存储法向量 (共12字节)
+
+所以每个顶点的总大小是：
+`12 + 8 + 12 = 32` 字节
+
+因此，`stride` 就是 `32` 字节，表示每个顶点的起始位置与下一个顶点的起始位置之间的距离。
+
+最后一个参数的类型是`void*`，所以需要我们进行这个奇怪的强制类型转换。它表示位置数据在缓冲中起始位置的偏移量(Offset)。由于位置数据在数组的开头，所以这里是0。我们会在后面详细解释这个参数。
+
+**`pointer`**：
+`pointer` 是指数据在缓冲区中的偏移量，指示从哪里开始读取数据。假设缓冲区中的顶点数据结构如前所示，从位置开始，按顺序存储位置、纹理坐标、法向量。如果我们设置：
+
+- `pointer = 0`，表示从第一个 `float`（位置的第一个值）开始读取。
+- `pointer = 12`，表示从纹理坐标的第一个值开始读取，因为位置占了12个字节。
+- `pointer = 20`，表示从法向量的第一个值开始读取，因为纹理坐标占了8个字节。
+
+---
+
+那么现在我们已经定义了OpenGL应该如何解释顶点数据，我们之后使用glEnableVertexAttribArray，以顶点属性位置值作为参数
+
+```c++
+// 启用顶点属性
+glEnableVertexAttribArray(0);  // 启用位置属性
+glEnableVertexAttribArray(1);  // 启用颜色属性
+glEnableVertexAttribArray(2);  // 启用纹理坐标属性
+
+// 禁用顶点属性（可选）
+glDisableVertexAttribArray(0);  // 禁用位置属性
+glDisableVertexAttribArray(1);  // 禁用颜色属性
+glDisableVertexAttribArray(2);  // 禁用纹理坐标属性
+```
+
+然后我们使用一个顶点缓冲对象将顶点数据初始化到缓冲当中，建立了一个顶点和一个片段着色器，并告诉了OpenGL如何把顶点数据链接到顶点着色器的属性上。
+
+然后我们可以绘制物体了。
+
+```c++
+
+glBindBuffer(GL_ARRAY_BUFFER, VBO);
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizoef(floag), (void*)0);
+glEnableVertexAttribArray(0);
+
+glUseProgram(shaderProgram);
+
+someOpenGLFuncationThatDrawsOurTriangle();
+
+```
+
+## 顶点数组对象
+
+顶点数组对象（Vertex Array Object, VAO）可以像顶点缓冲对象那样被绑定，任何随后的顶点属性调用都会储存在这个VAO中，好处是，配置顶点属性指针的时候，只需要将那些调用执行一次，之后再绘制物体的时候只需要绑定对应的VAO即可。
+
+使得不同顶点数据和属性配置之间的切换会变得非常简单，只需要绑定不同的VAO即可，刚刚设置的所有状态都将存储在VAO之中。
+
+一个顶点数组对象会储存以下这些内容：
+
+- glEnableVertexAttribArray和glDisableVertexAttribArray的调用。
+- 通过glVertexAttribPointer设置的顶点属性配置。
+- 通过glVertexAttribPointer调用与顶点属性关联的顶点缓冲对象。
+
+### 创建VAO
+
+```c++
+unsigned int VAO;
+glGenVertexArrays(1, &VAO);
+```
+
+要想使用VAO，只是使用glBindVertexArray绑定VAO即可，绑定之后起，我们应该绑定和配置对应的VBO和属性指针，之后解绑VAO供之后使用。当我们打算绘制一个物体的时候，我们只要在绘制物体前简单地将VAO绑定到希望使用地设定上即可
+
+```c++
+unsigned int VAO;
+glGenVertexArray(1, &VAO);
+
+// ..:: 初始化代码（只运行一次 (除非你的物体频繁改变)） :: ..
+// 1. 绑定VAO
+glBindVertexArray(VAO);
+// 2. 把顶点数组复制到缓冲中供OpenGL使用
+glBindBuffer(GL_ARRAY_BUFFER, VBO);
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+// 3. 设置顶点属性指针
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
+
+[...]
+
+// ..:: 绘制代码（渲染循环中） :: ..
+// 4. 绘制物体
+glUseProgram(shaderProgram);
+glBindVertexArray(VAO);
+someOpenGLFunctionThatDrawsOurTriangle();
+```
+
+当你打算绘制多个物体地时候，你首先要生成和配置所有地VAO（和必须的VBO及其属性指针），然后储存它们以供后面使用，当我们打算绘制物体的时候拿出相应的VAO，绑定它，然后绘制完物体之后，再解绑VAO。
+
+### VBO 和 VAO
+
+VBO是存储数据的工具。
+
+VAO是管理如何使用这些数据的工具。
+
+**绑定 VAO**：当你绑定 VAO 后，OpenGL 会知道接下来的所有状态配置都会被与这个 VAO 相关联。也就是说，任何顶点属性的配置、VBO 的绑定等都会被记录到当前绑定的 VAO 中。
+
+**配置 VBO 和顶点属性**：接下来，你配置 VBO，上传数据到显存，并通过 `glVertexAttribPointer` 和 `glEnableVertexAttribArray` 来指定数据格式（如位置是 `vec3`，颜色是 `vec3`）。这些配置会被保存到 VAO 中。
+
+**解绑 VAO 和 VBO**：绑定 VAO 后，你通常会解绑 VBO 和 VAO，这样做是为了不让它们对其他部分产生影响。
+
+比如一个多个VBO和一个VAO的例子：
+
+```c++
+GLuint VBOs[3], VAO;
+glGenBuffers(3, VBOs);  // 生成 3 个 VBO
+glGenVertexArrays(1, &VAO);  // 生成一个 VAO
+
+// 绑定 VAO
+glBindVertexArray(VAO);
+
+// 1. 绑定位置数据到第一个 VBO
+glBindBuffer(GL_ARRAY_BUFFER, VBOs[0]);
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+// 设置位置属性指针
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
+
+// 2. 绑定颜色数据到第二个 VBO
+glBindBuffer(GL_ARRAY_BUFFER, VBOs[1]);
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+// 设置颜色属性指针
+glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)(3 * sizeof(float)));
+glEnableVertexAttribArray(1);
+
+// 3. 绑定法线数据到第三个 VBO
+glBindBuffer(GL_ARRAY_BUFFER, VBOs[2]);
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+// 设置法线属性指针
+glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)(6 * sizeof(float)));
+glEnableVertexAttribArray(2);
+
+// 解绑 VBO 和 VAO
+glBindBuffer(GL_ARRAY_BUFFER, 0);
+glBindVertexArray(0);
+
+// 绑定 VAO 并绘制立方体
+glBindVertexArray(VAO);
+glDrawArrays(GL_QUADS, 0, 8);  // 立方体有 8 个顶点
+glBindVertexArray(0);
+
+```
+
+## 三角形绘制
+
+```C++
+glUseProgram(shaderProgram);
+glBindVertexArray(VAO);
+glDrawArrays(GL_TRIANGLES, 0, 3);
+```
+
+我们希望绘制的是一个三角形，这里传递GL_TRIANGLES给它。第二个参数指定了顶点数组的起始索引，我们这里填`0`。最后一个参数指定我们打算绘制多少个顶点，这里是`3`（我们只从我们的数据中渲染一个三角形，它只有3个顶点长）。
+
+完整的代码如下:
+
+```c++
+// OpenGL
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+
+// c++
+#include <iostream>
+
+const char* vertexShaderSource = "#version 330 core\n"
+"layout (location = 0) in vec3 aPos;\n"
+"void main()\n"
+"{\n"
+"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+"}\0";
+
+const char* fragmentShaderSource = "#version 330 core\n"
+"out vec4 FragColor;\n"
+"void main()\n"
+"{\n"
+"FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+"}\n";
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+	glViewport(0, 0, width, height);
+}
+void processInput(GLFWwindow* window)
+{
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	{
+		glfwSetWindowShouldClose(window, true);
+	}
+}
+int main()
+{
+	glfwInit();
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+	GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL_ForRiver", NULL, NULL);
+	if (window == NULL)
+	{
+		std::cout << "Failed to create GLFW window" << std::endl;
+		glfwTerminate();
+		return -1;
+	}
+	glfwMakeContextCurrent(window);
+
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	{
+		std::cout << "Failed to initialize GLAD" << std::endl;
+		return-1;
+	}
+
+	// 窗口位置X，窗口位置Y，窗口宽度，窗口高度
+	glViewport(0, 0, 800, 600);
+
+	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
+	// 创建着色器
+	unsigned int vertexShader;
+	vertexShader = glCreateShader(GL_VERTEX_SHADER);
+	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+	glCompileShader(vertexShader);
+
+	int success;
+	char infoLog[512];
+	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
+	if (!success)
+	{
+		glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
+		std::cout << "Error:SHADER:VERTEX::COMPILE_FAILED\n" << infoLog << std::endl;
+	}
+
+	unsigned int fragmentShader;
+	fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+	glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
+	glCompileShader(fragmentShader);
+
+	glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
+	if (!success)
+	{
+		glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
+		std::cout << "Error:SHADER:VERTEX::COMPILE_FAILED\n" << infoLog << std::endl;
+	}
+
+	unsigned int shaderProgram;
+	shaderProgram = glCreateProgram();
+	glAttachShader(shaderProgram, vertexShader);
+	glAttachShader(shaderProgram, fragmentShader);
+	glLinkProgram(shaderProgram);
+
+	glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
+	if (!success)
+	{
+		glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
+		std::cout << "Error:ShaderProgram::LinkError:" << infoLog << std::endl;
+	}
+
+	glDeleteShader(vertexShader);
+	glDeleteShader(fragmentShader);
+
+	float vertices[] = {
+		   -0.5f, -0.5f, 0.0f, // left  
+			0.5f, -0.5f, 0.0f, // right 
+			0.0f,  0.5f, 0.0f  // top   
+	};
+
+	unsigned int VAO, VBO;
+	glGenVertexArrays(1, &VAO);
+	glGenBuffers(1, &VBO);
+
+	glBindVertexArray(VAO);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+	// 传输顶点信息
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+
+	glBindBuffer(GL_VERTEX_ARRAY, 0);
+	glBindVertexArray(0);
+
+	while (!glfwWindowShouldClose(window))
+	{
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f); // 状态设置函数
+		glClear(GL_COLOR_BUFFER_BIT); // 状态使用函数
+
+		processInput(window);
+
+		glUseProgram(shaderProgram);
+		glBindVertexArray(VAO);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
+
+		glfwSwapBuffers(window);
+		glfwPollEvents();
+	}
+
+	glfwTerminate();
+	return 0;
+}
+```
+
+## 元素缓冲对象
+
+渲染顶点的最后一个话题，元素缓冲对象（Element Buffer Object）也叫索引缓冲对象(Index Buffer Object, IBO)。
+
+假设我们不再绘制一个三角形而是一个矩形，那么我们可以通过绘制两个三角形来组成一个矩形。
+
+```c++
+float vertices[] = {
+    // 第一个三角形
+    0.5f, 0.5f, 0.0f,   // 右上角
+    0.5f, -0.5f, 0.0f,  // 右下角
+    -0.5f, 0.5f, 0.0f,  // 左上角
+    // 第二个三角形
+    0.5f, -0.5f, 0.0f,  // 右下角
+    -0.5f, -0.5f, 0.0f, // 左下角
+    -0.5f, 0.5f, 0.0f   // 左上角
+};
+```
+
+实际上我们可以不用存储六个顶点，而是存储四个顶点，然后指定绘制的顺序就可以了，这种索引绘制就是我们想要的方式
+
+```c++
+float vertices[] = {
+    0.5f, 0.5f, 0.0f,   // 右上角
+    0.5f, -0.5f, 0.0f,  // 右下角
+    -0.5f, -0.5f, 0.0f, // 左下角
+    -0.5f, 0.5f, 0.0f   // 左上角
+};
+
+unsigned int indices[] = {
+    // 注意索引从0开始! 
+    // 此例的索引(0,1,2,3)就是顶点数组vertices的下标，
+    // 这样可以由下标代表顶点组合成矩形
+
+    0, 1, 3, // 第一个三角形
+    1, 2, 3  // 第二个三角形
+};
+```
+
+### 创建EBO
+
+```c++
+unsigned int EBO;
+glGenBuffers(1, &EBO);
+
+glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+```
+
+我们传递了GL_ELEMENT_ARRAY_BUFFER当作缓冲目标。
+
+最后一件要做的事是用**glDrawElements来替换glDrawArrays函数**，表示我们要从索引缓冲区渲染三角形。使用glDrawElements时，我们会使用当前绑定的索引缓冲对象中的索引进行绘制：
+
+```c++
+glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+```
+
+第一个参数指定了我们绘制的模式，这个和glDrawArrays的一样。第二个参数是我们打算绘制顶点的个数，这里填6，也就是说我们一共需要绘制6个顶点。第三个参数是索引的类型，这里是GL_UNSIGNED_INT。最后一个参数里我们可以指定EBO中的偏移量（或者传递一个索引数组，但是这是当你不在使用索引缓冲对象的时候），但是我们会在这里填写0。
+
+但实际上，这个绑定EBO的操作也可以放在VAO之中。
+
+```c++
+glBindVertexArray(VAO);
+
+glBindBuffer(GL_ARRAY_BUFFER, VBO);
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+// 记得后面绘制的时候要替换成glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+```
+
+![image-20241203140927372](C:\Users\windows\AppData\Roaming\Typora\typora-user-images\image-20241203140927372.png)
+
++ 开启线框模式的方法`glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);`
+
+  >第一个参数表示我们打算将其应用到所有的三角形的正面和背面，第二个参数告诉我们用线来绘制。
+
+## 3.1第三章练习题
+
+1.添加更多顶点到数据中，使用glDrawArrays，尝试绘制两个彼此相连的三角形(着色器部分就省略了)
+
+```c++
+float vertices[] = {
+	-0.5f,-0.5f,0,
+	-0.5f,0.5f,0,
+	0.5f,-0.5f,0,
+	-0.5f,0.5f,0,
+	0.5f,0.5f,0,
+	0.5f,-0.5f,0
+};
+
+unsigned int VAO, VBO;
+glGenVertexArrays(1, &VAO);
+glGenBuffers(1, &VBO);
+
+glBindVertexArray(VAO);
+glBindBuffer(GL_ARRAY_BUFFER, VBO);
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
+
+glBindBuffer(GL_ARRAY_BUFFER, 0);
+glBindVertexArray(0);
+while (!glfwWindowShouldClose(window))
+{
+	glClearColor(0.2f, 0.3f, 0.3f, 1.0f); // 状态设置函数
+	glClear(GL_COLOR_BUFFER_BIT); // 状态使用函数
+
+	processInput(window);
+
+	glBindVertexArray(VAO);
+	glUseProgram(shaderProgram);
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	glDrawArrays(GL_TRIANGLES, 0, 6);
+
+	glfwSwapBuffers(window);
+	glfwPollEvents();
+}
+
+```
 
