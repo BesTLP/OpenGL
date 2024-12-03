@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="Dependencies\GLAD\src\glad.c" />
     <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\Exercide3.3.cpp" />
+    <ClCompile Include="src\Exercise3.1.cpp" />
+    <ClCompile Include="src\Exercise3.2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

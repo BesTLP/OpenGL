@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "D:\\repo\\OpenGL\\OpenGL\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercide3.3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\src\\Exercide3.3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercise3.2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\src\\Exercise3.2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercise3.1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\src\\Exercise3.1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\src\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\REPO\\OPENGL\\OPENGL\\OPENGL\\DEPENDENCIES\\GLAD\\INCLUDE\\GLAD\\GLAD.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OPENGL\\DEPENDENCIES\\GLAD\\INCLUDE\\GLAD\\GLAD.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLAD\\src\\glad.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\Dependencies\\GLAD\\src\\glad.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,53 +47,91 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Application.cpp",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Application.cpp",
-              "RelativeDocumentMoniker": "OpenGL\\src\\Application.cpp",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Application.cpp*",
-              "RelativeToolTip": "OpenGL\\src\\Application.cpp*",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Title": "Exercide3.3.cpp",
+              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercide3.3.cpp",
+              "RelativeDocumentMoniker": "OpenGL\\src\\Exercide3.3.cpp",
+              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercide3.3.cpp*",
+              "RelativeToolTip": "OpenGL\\src\\Exercide3.3.cpp*",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAwF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-30T02:44:44.88Z",
+              "WhenOpened": "2024-12-03T06:53:39.759Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "glad.h",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h",
-              "RelativeDocumentMoniker": "OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h",
-              "RelativeToolTip": "OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h",
-              "ViewState": "AgIAANsKAAAAAAAAAAAAwO0KAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-02T09:06:08.633Z",
+              "Title": "Exercise3.2.cpp",
+              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercise3.2.cpp",
+              "RelativeDocumentMoniker": "OpenGL\\src\\Exercise3.2.cpp",
+              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercise3.2.cpp",
+              "RelativeToolTip": "OpenGL\\src\\Exercise3.2.cpp",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAowKAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-03T06:26:51.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Exercise3.1.cpp",
+              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercise3.1.cpp",
+              "RelativeDocumentMoniker": "OpenGL\\src\\Exercise3.1.cpp",
+              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercise3.1.cpp",
+              "RelativeToolTip": "OpenGL\\src\\Exercise3.1.cpp",
+              "ViewState": "AgIAADgAAAAAAAAAAAAQwEwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-03T06:14:55.403Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Application.cpp",
+              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Application.cpp",
+              "RelativeDocumentMoniker": "OpenGL\\src\\Application.cpp",
+              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Application.cpp",
+              "RelativeToolTip": "OpenGL\\src\\Application.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-03T06:32:47.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "glad.h",
+              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h",
+              "RelativeDocumentMoniker": "OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h",
+              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h",
+              "RelativeToolTip": "OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h",
+              "ViewState": "AgIAAP0KAAAAAAAAAAAAwBQLAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-02T09:06:08.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "glew.h",
               "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h",
               "RelativeDocumentMoniker": "OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h",
               "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h",
               "RelativeToolTip": "OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h",
-              "ViewState": "AgIAAL0AAAAAAAAAAAAWwMcAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAABcHAAAAAAAAAAAAwCkHAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-30T03:27:13.53Z"
+              "WhenOpened": "2024-11-30T03:27:13.53Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "glad.c",
               "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLAD\\src\\glad.c",
               "RelativeDocumentMoniker": "OpenGL\\Dependencies\\GLAD\\src\\glad.c",
               "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLAD\\src\\glad.c",
               "RelativeToolTip": "OpenGL\\Dependencies\\GLAD\\src\\glad.c",
-              "ViewState": "AgIAAEsAAAAAAAAAAADwvxgAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAL0FAAAAAAAAAAAAwM8FAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-12-02T09:06:01.649Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-02T09:06:01.649Z"
             }
           ]
         }
