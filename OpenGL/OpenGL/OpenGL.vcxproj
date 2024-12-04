@@ -108,9 +108,10 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SOLUTION_DIR="$(SolutionDir)"</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)OpenGL\Dependencies\GLAD\include;$(SolutionDir)OpenGL\Dependencies\GLFW64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -125,9 +126,10 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SOLUTION_DIR="$(SolutionDir)"</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)OpenGL\Dependencies\GLAD\include;$(SolutionDir)OpenGL\Dependencies\GLFW64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,10 +142,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Dependencies\GLAD\src\glad.c" />
+    <ClCompile Include="headfile\Shader\Shader.cpp" />
     <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\Exercide_3\Exercide3.3.cpp" />
-    <ClCompile Include="src\Exercide_3\Exercise3.1.cpp" />
-    <ClCompile Include="src\Exercide_3\Exercise3.2.cpp" />
+    <ClCompile Include="src\Exercise_4\Exercise_4_3.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="headfile\Shader\Shader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ShaderSource\Shader.fs" />
+    <None Include="ShaderSource\Shader.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

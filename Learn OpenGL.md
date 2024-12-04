@@ -1189,7 +1189,7 @@ glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
   >第一个参数表示我们打算将其应用到所有的三角形的正面和背面，第二个参数告诉我们用线来绘制。
 
-## 3.1第三章练习题
+## 第三章练习题
 
 1.添加更多顶点到数据中，使用glDrawArrays，尝试绘制两个彼此相连的三角形(着色器部分就省略了)
 
@@ -1233,4 +1233,503 @@ while (!glfwWindowShouldClose(window))
 }
 
 ```
+
+2.创建相同的两个三角形，但对它们的数据使用不同的VAO和VBO：
+
+```c++
+// 定义两个三角形的顶点数据
+float firstTriangle[] = {
+	-0.5f, -0.5f, 0.0f,  // 第一个三角形的第一个顶点
+	-0.5f,  0.5f, 0.0f,  // 第一个三角形的第二个顶点
+	 0.5f, -0.5f, 0.0f   // 第一个三角形的第三个顶点
+};
+
+float secondTriangle[] = {
+	-0.5f, -0.5f, 0.0f,  // 第一个三角形的第一个顶点
+	-0.5f,  0.5f, 0.0f,  // 第一个三角形的第二个顶点
+	 0.5f, -0.5f, 0.0f   // 第一个三角形的第三个顶点
+};
+
+// 定义 VAO 和 VBO 数组
+unsigned int VBO[2], VAO[2];
+
+// 生成 VAO 和 VBO
+glGenBuffers(2, VBO);
+glGenVertexArrays(2, VAO);
+
+// 配置第一个三角形的 VAO 和 VBO
+glBindVertexArray(VAO[0]);
+glBindBuffer(GL_ARRAY_BUFFER, VBO[0]);
+glBufferData(GL_ARRAY_BUFFER, sizeof(firstTriangle), firstTriangle, GL_STATIC_DRAW);
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
+glBindBuffer(GL_ARRAY_BUFFER, 0);  // 解绑 VBO
+
+// 配置第二个三角形的 VAO 和 VBO
+glBindVertexArray(VAO[1]);
+glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
+glBufferData(GL_ARRAY_BUFFER, sizeof(secondTriangle), secondTriangle, GL_STATIC_DRAW);
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
+glBindBuffer(GL_ARRAY_BUFFER, 0);  // 解绑 VBO
+
+glBindVertexArray(0);  // 解绑 VAO
+while (!glfwWindowShouldClose(window))
+{
+	glClearColor(0.2f, 0.3f, 0.3f, 1.0f); // 状态设置函数
+	glClear(GL_COLOR_BUFFER_BIT); // 状态使用函数
+
+	processInput(window);
+	glUseProgram(shaderProgram);
+	// 绘制第一个三角形
+	glBindVertexArray(VAO[0]);
+	glDrawArrays(GL_TRIANGLES, 0, 3);  // 绘制第一个三角形
+
+	// 绘制第二个三角形
+	glBindVertexArray(VAO[1]);
+	glDrawArrays(GL_TRIANGLES, 0, 3);  // 绘制第二个三角形
+
+	glfwSwapBuffers(window);
+	glfwPollEvents();
+}
+```
+
+3.创建两个着色器程序，第二个程序使用一个不同的片段着色器，输出黄色；再次绘制这两个三角形，让其中一个输出为黄色（1，1，0，1）：
+
+```c++
+#version 330 core
+out vec4 FragColorYellow;
+
+void main()
+{
+    FragColor = vec4(1.0f, 1.0f, 0, 1.0f);
+}
+```
+
+```c++
+unsigned int vertexShader;
+vertexShader = glCreateShader(GL_VERTEX_SHADER);
+glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+glCompileShader(vertexShader);
+char infoLog[512];
+int success;
+glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
+
+if (!success)
+{
+	glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
+	std::cout << infoLog << std::endl;
+}
+
+unsigned int fragmentShader1, fragmentShader2;
+fragmentShader1 = glCreateShader(GL_FRAGMENT_SHADER);
+glShaderSource(fragmentShader1, 1, &fragmentShaderSource1, NULL);
+glad_glCompileShader(fragmentShader1);
+glGetShaderiv(fragmentShader1, GL_COMPILE_STATUS, &success);
+if (!success)
+{
+	glGetShaderInfoLog(fragmentShader1, 512, NULL, infoLog);
+	std::cout << infoLog << std::endl;
+}
+
+fragmentShader2 = glCreateShader(GL_FRAGMENT_SHADER);
+glShaderSource(fragmentShader2, 1, &fragmentShaderSource2, NULL);
+glCompileShader(fragmentShader2);
+glGetShaderiv(fragmentShader2, GL_COMPILE_STATUS, &success);
+if (!success)
+{
+	glGetShaderInfoLog(fragmentShader2, 512, NULL, infoLog);
+	std::cout << infoLog << std::endl;
+}
+
+unsigned int shaderProgram1, shaderProgram2;
+shaderProgram1 = glCreateProgram();
+shaderProgram2 = glCreateProgram();
+
+glAttachShader(shaderProgram1, vertexShader);
+glAttachShader(shaderProgram1, fragmentShader1);
+glAttachShader(shaderProgram2, vertexShader);
+glAttachShader(shaderProgram2, fragmentShader2);
+
+glLinkProgram(shaderProgram1);
+glGetProgramiv(shaderProgram1, GL_LINK_STATUS, &success);
+if (!success)
+{
+	glGetProgramInfoLog(shaderProgram1, 512, NULL, infoLog);
+	std::cout << infoLog << std::endl;
+}
+glLinkProgram(shaderProgram2);
+
+glGetProgramiv(shaderProgram2, GL_LINK_STATUS, &success);
+if (!success)
+{
+	glGetProgramInfoLog(shaderProgram2, 512, NULL, infoLog);
+	std::cout << infoLog << std::endl;
+}
+
+glDeleteShader(vertexShader);
+glDeleteShader(fragmentShader1);
+glDeleteShader(fragmentShader2);
+
+float firstTriangle[] = {
+	-0.9f, -0.5f, 0.0f,  // left 
+	-0.0f, -0.5f, 0.0f,  // right
+	-0.45f, 0.5f, 0.0f,  // top 
+};
+float secondTriangle[] = {
+	0.0f, -0.5f, 0.0f,  // left
+	0.9f, -0.5f, 0.0f,  // right
+	0.45f, 0.5f, 0.0f   // top 
+};
+
+// 定义 VAO 和 VBO 数组
+unsigned int VBO[2], VAO[2];
+
+// 生成 VAO 和 VBO
+glGenBuffers(2, VBO);
+glGenVertexArrays(2, VAO);
+
+// 配置第一个三角形的 VAO 和 VBO
+glBindVertexArray(VAO[0]);
+glBindBuffer(GL_ARRAY_BUFFER, VBO[0]);
+glBufferData(GL_ARRAY_BUFFER, sizeof(firstTriangle), firstTriangle, GL_STATIC_DRAW);
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
+glBindBuffer(GL_ARRAY_BUFFER, 0);  // 解绑 VBO
+
+// 配置第二个三角形的 VAO 和 VBO
+glBindVertexArray(VAO[1]);
+glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
+glBufferData(GL_ARRAY_BUFFER, sizeof(secondTriangle), secondTriangle, GL_STATIC_DRAW);
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
+glBindBuffer(GL_ARRAY_BUFFER, 0);  // 解绑 VBO
+
+glBindVertexArray(0);  // 解绑 VAO
+while (!glfwWindowShouldClose(window))
+{
+	glClearColor(0.2f, 0.3f, 0.3f, 1.0f); // 设置背景色
+	glClear(GL_COLOR_BUFFER_BIT); // 清除颜色缓存
+
+	processInput(window);
+
+	// 绘制第一个三角形（红色）
+	glUseProgram(shaderProgram1);
+	glBindVertexArray(VAO[0]);
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+
+	// 绘制第二个三角形（绿色）
+	glUseProgram(shaderProgram2);
+	glBindVertexArray(VAO[1]);
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+
+	glfwSwapBuffers(window);
+	glfwPollEvents();
+}
+```
+
+# 4.着色器
+
+着色器(Shader)是运行在GPU上的小程序。这些小程序为图形渲染管线的某个特定部分而运行。从基本意义上来说，着色器只是一种把输入转化为输出的程序。着色器也是一种非常独立的程序，因为它们之间不能相互通信；它们之间唯一的沟通只有通过输入和输出。
+
+## GLSL
+
+着色器是使用一种叫做GLSL的类C语言编写的，GLSL是为图形计算量身定制的，包含了一些针对向量和矩阵操作的有用特性。
+
+```c
+#version version_number
+in type in_variable_name;
+in type in_variable_name;
+
+out type out_variable_name;
+
+uniform type uniform_name;
+
+void main()
+{
+  // 处理输入并进行一些图形操作
+  ...
+  // 输出处理过的结果到输出变量
+  out_variable_name = weird_stuff_we_processed;
+}
+```
+
+当谈论顶点着色器的时候，每个输入变量也叫做顶点属性，我们能声明的顶点属性是有上限的，一般是由硬件来决定的。
+
+OpenGL确保了至少有16个包含4分量的顶点属性可用。
+
+```c++
+int nrAttributes;
+glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
+std::cout << "Maximum nr of vertex attributes supported: " << nrAttributes << std::endl;
+```
+
+## 数据类型
+
+包含C语言中的基础数据类型：`int`, `float`, `double`, `uint`, `bool`.
+
+GLSL也有两种容器类型：`Vector`, `Matrix`
+
+GLSL中的向量可以包含了2-4个分量的容器。
+
+| 类型    | 含义                                             |
+| :------ | :----------------------------------------------- |
+| `vecn`  | 包含`n`个float分量的默认向量（大多数情况下使用） |
+| `bvecn` | 包含`n`个bool分量的向量                          |
+| `ivecn` | 包含`n`个int分量的向量                           |
+| `uvecn` | 包含`n`个unsigned int分量的向量                  |
+| `dvecn` | 包含`n`个double分量的向量                        |
+
+向量这一数据类型也允许一些有趣而灵活的分量选择方式，叫做重组(Swizzling)。重组允许这样的语法：
+
+```c++
+vec2 someVec;
+vec4 differentVec = someVec.xyxx;
+vec3 anotherVec = differentVec.zyw;
+vec4 otherVec = someVec.xxxx + anotherVec.yxzy;
+```
+
+你可以使用上面4个字母任意组合来创建一个和原来向量一样长的（同类型）新向量，只要原来向量有那些分量即可；然而，你不允许在一个`vec2`向量中去获取`.z`元素。我们也可以把一个向量作为一个参数传给不同的向量构造函数，以减少需求参数的数量：
+
+```c++
+vec2 vect = vec2(0.5, 0.7);
+vec4 result = vec4(vect, 0.0, 0.0);
+vec4 otherResult = vec4(result.xyz, 1.0);
+```
+
+## 输入与输出
+
+着色器虽然是各自独立的小程序，但是都是整体的一部分，GLSL定义了in和out关键字专门来实现这个目的，只要一个输出变量与下一个着色器阶段的输入匹配，就会传递下去，**但在顶点和片段着色器中会有点不同。**
+
+顶点着色器应该接收的是一种特殊形式的输入，否则就会效率低下。**顶点着色器的输入特殊在，它从顶点数据中直接接收输入**。为了**定义顶点数据该如何管理，我们使用`location`这一元数据指定输入变量，这样我们才可以在CPU上配置顶点属性**。我们已经在前面的教程看过这个了，`layout (location = 0)`。顶点着色器需要为它的输入提供一个额外的`layout`标识，这样我们才能把它链接到顶点数据。
+
+片段着色器，需要一个`vec4`颜色输出变量，如果片段着色器没有定义输出的颜色，那么OpenGL就会把物体渲染为`black` or`white`。
+
+我们可以修改之前的顶点着色器和片段着色器，让顶点着色器为片段着色器确定颜色
+
+```c++
+// 顶点着色器
+#version 330 core
+layour(location = 0) in vec3 aPos;
+
+out vec4 vertexColor;
+void main()
+{
+    gl_Position = vec4(aPos, 1.0);
+    vertexColor = vec4(0.5,0,0,1);
+}
+```
+
+```c++
+// 片段着色器
+#version 330 core
+// 先in还是先out不区分
+out vec4 FragColor;
+
+in vec4 vertexColor;
+void main()
+{
+    FragColor = vertexColor;
+}
+```
+
+```c++
+const char* vertexShaderSource = "#version 330 core\n"
+"layout (location = 0) in vec3 aPos;\n"
+"out vec4 vertexColor;\n"
+"void main()\n"
+"{\n"
+"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+"   vertexColor = vec4(0.5, 0, 0, 1);\n"
+"}\0";
+
+const char* fragmentShaderSource = "#version 330 core\n"
+"out vec4 FragColor;\n"
+"in vec4 vertexColor;\n"
+"void main()\n"
+"{\n"
+"FragColor = vertexColor;\n"
+"}\n";
+```
+
+## Uniform
+
+Uniform是从应用程序在CPU上传递数据到GPU上的着色器的方式。
+
+但uniform和顶点属性有些不同。首先，uniform**是全局的(Global)**。全局意味着uniform变量必须在每个着色器程序对象中都是独一无二的，而且它可以被着色器程序的任意着色器在任意阶段访问。第二，无论你把uniform值设置成什么，uniform会一直保存它们的数据，直到它们被重置或更新。
+
+要在 GLSL 中声明 uniform，我们只需在着色器中使用 `uniform` 关键字，并带上类型和名称。从那时起，我们就可以在着色器中使用新声明的 uniform。我们来看看这次是否能通过uniform设置三角形的颜色：
+
+```c++
+#version 330 core
+out vec4 FragColor;
+
+uniform vec4 ourColor; // 在OpenGL程序代码中设定这个变量
+
+void main()
+{
+    FragColor = ourColor;
+}
+```
+
+因为uniform是全局变量，因此我们可以在任何着色器中去定义它们，而不需要通过顶点着色器作为中介，顶点着色器中不需要这个uniform，所以我们不用在那里定义。
+
++ 如果你声明了一个uniform却在GLSL代码中没用过，编译器会静默移除这个变量，**导致最后编译出的版本中并不会包含它，这可能导致几个非常麻烦的错误，记住这点**！
+
+我们可以通过寻找着色器中uniform属性的位置值，然后来更新它
+
+```c++
+    float timeValue = glfwGetTime();
+    float greenValue = sin(timeValue) / 2.0f + 0.5f;
+    float redValue = sin(timeValue) / 4.0f + 0.75f;
+    float blueValue = sin(timeValue) / 5.0f + 0.8f;
+
+    int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
+    glUseProgram(shaderProgram);
+    glUniform4f(vertexColorLocation, redValue, greenValue, blueValue, 1.0f);
+```
+
+我们用glGetUniformLocation查询uniform ourColor的位置值。
+
+我们为查询函数提供着色器程序和uniform的名字（这是我们希望获得的位置值的来源）。如果glGetUniformLocation**返回`-1`就代表没有找到这个位置值**。
+
+最后，我们可以通过glUniform4f函数设置uniform值。注意，查询uniform地址不要求你之前使用过着色器程序。
+
+**更新一个uniform之前你必须先使用程序**（调用glUseProgram)，因为它是在当前激活的着色器程序中设置uniform的。
+
+因为OpenGL在其核心是一个C库，所以**它不支持类型重载**，在函数参数不同的时候就要为其定义新的函数；glUniform是一个典型例子。这个函数有一个特定的后缀，标识设定的uniform的类型。可能的后缀有：
+
+| 后缀 | 含义                                 |
+| :--- | :----------------------------------- |
+| `f`  | 函数需要一个float作为它的值          |
+| `i`  | 函数需要一个int作为它的值            |
+| `ui` | 函数需要一个unsigned int作为它的值   |
+| `3f` | 函数需要3个float作为它的值           |
+| `fv` | 函数需要一个float向量/数组作为它的值 |
+
+每当你打算配置一个OpenGL的选项时就可以简单地根据这些规则选择适合你的数据类型的重载函数。在我们的例子里，**我们希望分别设定uniform的4个float值，所以我们通过glUniform4f传递我们的数据**(注意，我们也可以使用`fv`版本)。
+
+## 更多的属性
+
+我们尝试直接将颜色的属性也加入到`vertices`数组之中
+
+```c++
+float vertices[] = {
+    // 位置              // 颜色
+     0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   // 右下
+    -0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,   // 左下
+     0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f    // 顶部
+};
+```
+
+我们就要修改相应的顶点着色器
+
+```c++
+#version 330 core
+
+layout(location = 0) in vec3 aPos;
+layout(location = 1) in vec3 aColor;
+
+out vec3 outColor;
+void main()
+{
+    gl_Position = vec4(aPos, 1.0);
+    outColor = aColor;
+}
+```
+
+还有片段着色器
+
+```c++
+#version 330 core
+out vec4 FragColor;
+in vec3 ourColor;
+
+void main()
+{
+    FragColor = vec4(ourColor, 1.0);
+}
+```
+
+![image-20241203164028386](C:\Users\windows\AppData\Roaming\Typora\typora-user-images\image-20241203164028386.png)
+
+现在的位置信息就需要得到更新
+
+```c++
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
+glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)3 * sizeof(float));
+glEnableVertexAttribArray(1);
+```
+
+由于我们现在有了两个顶点属性，我们不得不重新计算**步长**值。
+
+为获得数据队列中下一个属性值（比如位置向量的下个`x`分量）我们必须向右移动6个float。其中3个是位置值，另外3个是颜色值。这使我们的步长值为6乘以float的字节数（=24字节）。
+
+同样，这次我们必须指定一个偏移量。对于每个顶点来说，位置顶点属性在前，所以它的偏移量是0。颜色属性紧随位置数据之后，所以偏移量就是`3 * sizeof(float)`，用字节来计算就是12字节。
+
+![image-20241203164837519](C:\Users\windows\AppData\Roaming\Typora\typora-user-images\image-20241203164837519.png)
+
+这是在片段着色器中进行的所谓**片段插值**(Fragment Interpolation)的结果。
+
+当渲染一个三角形时，**光栅化(Rasterization)阶段**通常会造成比原指定顶点更多的片段。
+
+光栅会根据每个片段在三角形形状上所处相对位置决定这些片段的位置。
+
+基于这些位置，它会**插值**(Interpolate)所有片段着色器的输入变量。
+
+**插值**就是通过计算每个片段距离三角形各个角的远近，来决定它的颜色。比如：
+
+- 如果片段离左上角很近，它的颜色就会是**绿色**。
+- 如果片段离右上角很近，它的颜色就会是**蓝色**。
+- 如果片段离底部很近，它的颜色就会是**红色**。
+
+## 构建我们自己的着色器类
+
+我们可以写一个类，让它从硬盘来读取着色器，然后编译并链接并进行错误检测。
+
+```c++
+#ifndef SHADER_H // 常用的防止头文件重复包含的预处理指令
+#define SHADER_H
+
+#include <glad/glad.h>; // 包含glad来获取所有的必须OpenGL头文件
+
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+
+
+class Shader
+{
+public:
+    // 程序ID
+    unsigned int ID;
+
+    // 构造器读取并构建着色器
+    Shader(const char* vertexPath, const char* fragmentPath);
+    // 使用/激活程序
+    void use();
+    // uniform工具函数
+    void setBool(const std::string &name, bool value) const;  
+    void setInt(const std::string &name, int value) const;   
+    void setFloat(const std::string &name, float value) const;
+};
+
+#endif
+```
+
+**题外话：**
+
++ `#ifndef SHADER_H`：`ifndef` 代表 "if not defined"，意思是如果 `SHADER_H` 这个宏没有被定义过，就会执行接下来的代码。
+
+  `#define SHADER_H`：这行定义了 `SHADER_H` 宏，表示这个头文件已经被包含过了。
+
+  `#endif`：标记条件编译结束。这个指令结束了 `#ifndef` 的条件语句。
+
+
+
+
+
+
 

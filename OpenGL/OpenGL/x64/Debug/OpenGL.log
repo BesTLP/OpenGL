@@ -1,3 +1,7 @@
-﻿  Application.cpp
-D:\repo\OpenGL\OpenGL\OpenGL\src\Application.cpp(135,25): warning C4101: “EBO”: 未引用的局部变量
+﻿  Exercise_4_3.cpp
+D:\repo\OpenGL\OpenGL\OpenGL\src\Exercise_4\Exercise_4_3.cpp(12,9): warning C4005: “SOLUTION_DIR”: 宏重定义
+      D:\repo\OpenGL\OpenGL\OpenGL\src\Exercise_4\Exercise_4_3.cpp(12,9):
+      之前在命令行上声明的“SOLUTION_DIR”
+  
+D:\repo\OpenGL\OpenGL\OpenGL\src\Exercise_4\Exercise_4_3.cpp(81,25): warning C4101: “EBO”: 未引用的局部变量
   OpenGL.vcxproj -> D:\repo\OpenGL\OpenGL\x64\Debug\OpenGL.exe
