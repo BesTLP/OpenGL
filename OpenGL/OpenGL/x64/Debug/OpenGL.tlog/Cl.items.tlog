@@ -1,4 +1,7 @@
 D:\repo\OpenGL\OpenGL\OpenGL\Dependencies\GLAD\src\glad.c;D:\repo\OpenGL\OpenGL\OpenGL\x64\Debug\glad.obj
+D:\repo\OpenGL\OpenGL\OpenGL\Dependencies\GLM\glm\detail\glm.cpp;D:\repo\OpenGL\OpenGL\OpenGL\x64\Debug\glm.obj
+D:\repo\OpenGL\OpenGL\OpenGL\Dependencies\GLM\glm\glm.cppm;D:\repo\OpenGL\OpenGL\OpenGL\x64\Debug\glm.obj
 D:\repo\OpenGL\OpenGL\OpenGL\headfile\Shader\Shader.cpp;D:\repo\OpenGL\OpenGL\OpenGL\x64\Debug\Shader.obj
+D:\repo\OpenGL\OpenGL\OpenGL\headfile\stb_image\stb_image.cpp;D:\repo\OpenGL\OpenGL\OpenGL\x64\Debug\stb_image.obj
 D:\repo\OpenGL\OpenGL\OpenGL\src\Application.cpp;D:\repo\OpenGL\OpenGL\OpenGL\x64\Debug\Application.obj
-D:\repo\OpenGL\OpenGL\OpenGL\src\Exercise_4\Exercise_4_3.cpp;D:\repo\OpenGL\OpenGL\OpenGL\x64\Debug\Exercise_4_3.obj
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_6_Transformation\Chapter_6_2.cpp;D:\repo\OpenGL\OpenGL\OpenGL\x64\Debug\Chapter_6_2.obj

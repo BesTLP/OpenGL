@@ -730,7 +730,7 @@ glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 
 第一个参数指定我们要配置的顶点属性。还记得我们在顶点着色器中使用`layout(location = 0)`定义了position顶点属性的位置值(Location)吗？它可以把顶点属性的位置值设置为`0`。因为我们希望把数据传递到这一个顶点属性中，所以这里我们传入`0`。
 
-第二个参数指定顶点属性的大小。顶点属性是一个`vec3`，它由3个值组成，所以大小是3。
+第二个参数指定顶点属性的大小。顶点属性是一个`vec3`，它由3个值组成，所以大小是3，所以如果是2D纹理值的话，就是2.
 
 **每个顶点属性从一个VBO管理的内存中获得它的数据**，而具体是从哪个VBO（程序中可以有多个VBO）获取则是通过在调用**glVertexAttribPointer时绑定到GL_ARRAY_BUFFER的VBO决定的。**由于在**调用glVertexAttribPointer之前绑定的是先前定义的VBO对象，顶点属性`0`现在会链接到它的顶点数据。**
 
@@ -1160,7 +1160,7 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
 我们传递了GL_ELEMENT_ARRAY_BUFFER当作缓冲目标。
 
-最后一件要做的事是用**glDrawElements来替换glDrawArrays函数**，表示我们要从索引缓冲区渲染三角形。使用glDrawElements时，我们会使用当前绑定的索引缓冲对象中的索引进行绘制：
+最后一件要做的事是用**glDrawElements来替换glDrawArrays函数**，表示我们要从索引缓冲区渲染三角形。使用glDrawElements时，我们会使用当前绑定的索引缓冲对象中的索引进行绘制： 
 
 ```c++
 glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
@@ -1727,9 +1727,631 @@ public:
 
   `#endif`：标记条件编译结束。这个指令结束了 `#ifndef` 的条件语句。
 
+## 第四章练习题
+
+修改顶点着色器让三角形上下颠倒：[参考解答](https://learnopengl.com/code_viewer.php?code=getting-started/shaders-exercise1)
+
+让y轴上下颠倒即可
+
+```c++
+const char* vertexShaderSource = "#version 330 core\n"
+"layout(location = 0) in vec3 aPos;\n"
+"layout(location = 1) in vec3 aColor;\n"
+"out vec3 ourColor;\n"
+"void main()\n"
+"{\n"
+"gl_Position = vec4(aPos.x, -aPos.y, aPos.z, 1.0);\n"
+"ourColor = vec3(aColor);\n"
+"}\n";
+```
+
+使用uniform定义一个水平偏移量，在顶点着色器中使用这个偏移量把三角形移动到屏幕右侧：[参考解答	](https://learnopengl.com/code_viewer.php?code=getting-started/shaders-exercise2)
+
+```c++
+const char* vertexShaderSource = "#version 330 core\n"
+"layout(location = 0) in vec3 aPos;\n"
+"layout(location = 1) in vec3 aColor;\n"
+"uniform float offset;\n"
+"out vec3 ourColor;\n"
+"void main()\n"
+"{\n"
+"gl_Position = vec4(aPos.x + offset, aPos.y + offset, aPos.z + offset, 1.0);\n"
+"ourColor = vec3(aColor);\n"
+"}\n";
+
+int uniformOffsetLocation = glGetUniformLocation(shaderProgram, "offset");
+if (uniformOffsetLocation == -1)
+{
+    return -1;
+}
+float offset = std::min(glfwGetTime(), 0.5);
+glUniform1f(uniformOffsetLocation, offset);
+```
+
+使用`out`关键字把顶点位置输出到片段着色器，并将片段的颜色设置为与顶点位置相等（来看看连顶点位置值都在三角形中被插值的结果）。做完这些后，尝试回答下面的问题：为什么在三角形的左下角是黑的?：[参考解答](https://learnopengl.com/code_viewer.php?code=getting-started/shaders-exercise3)
+
+```c++
+#version 330 core
+
+// 输入顶点属性
+layout(location = 0) in vec3 aPos;    // 顶点位置
+layout(location = 1) in vec3 aColor;  // 顶点颜色
+
+// Uniform变量，用于在应用程序和着色器之间传递数据
+uniform float offset;                 // 偏移量
+
+// 输出到片段着色器的颜色数据
+out vec3 ourColor;                    // 传递给片段着色器的颜色
+out vec3 ourPos;
+
+void main()
+{
+    // 设置顶点位置，并应用偏移量
+    gl_Position = vec4(aPos.x + offset, aPos.y + offset, aPos.z + offset, 1.0);
+    
+    // 将颜色传递给片段着色器
+    ourPos = vec3(aPos);
+    ourColor = vec3(aColor);
+};
+
+```
+
+```c++
+#version 330 core
+
+in vec3 ourColor;  // 从顶点着色器接收的颜色数据
+in vec3 ourPos;
+out vec4 FragColor;  // 片段着色器的输出颜色
+
+void main()
+{
+    FragColor = vec4(ourPos, 1.0);  // 将接收到的颜色值转换为 vec4，并设置 alpha 为 1.0（不透明）
+};
+
+```
+
+如果你希望颜色值正常插值，确保在顶点着色器中传递的颜色属性在 `[0.0f, 1.0f]` 范围内。
+
+片段颜色的输出等于三角形。我们的三角形左下角点的坐标是多少？这是 （-0.5f， -0.5f， 0.0f）。由于 xy 值为负，它们被限制为 0.0f 的值。
+
+# 5.纹理
+
+纹理是一个2D图片（也可以有1D和3D），可以用来添加物体的细节。
+
+![image-20241204143923867](C:\Users\windows\AppData\Roaming\Typora\typora-user-images\image-20241204143923867.png)
+
+为了将纹理映射到三角形上，我们需要指定三角形的**每个顶点各自对应纹理的哪个部分，这样每个顶点都会关联一个纹理坐标**，用来**标明该从纹理图像的哪个部分来采样**，之后在图形的其它片段上进行片段插值(Fragment Interpolation)。
+
+纹理坐标在x和y轴上，范围为0到1之间（注意我们使用的是2D纹理图像）。使用纹理坐标获取纹理颜色叫做采样(Sampling)。**纹理坐标起始于(0, 0)，也就是纹理图片的左下角，终止于(1, 1)，即纹理图片的右上角**。
+
+因此我们为三角形指定3个纹理坐标点。
+
+```c++
+float texCoords[] = {
+    0.0f, 0.0f, // 左下角
+    1.0f, 0.0f, // 右下角
+    0.5f, 1.0f  // 上中
+};
+```
+
+z河阳三角形的左下角就对应纹理的左下角，其余点同理。
+
+传递到片段着色器中，就会为每个片段都进行纹理坐标的插值。
+
+## 纹理环绕方式
+
+纹理坐标的**范围通常是从(0, 0)到(1, 1)**，如果我们把纹理坐标设置在**范围之外，OpenGL默认的行为是重复这个纹理图像**（我们基本上忽略浮点纹理坐标的整数部分）
+
+| 环绕方式           | 描述                                                         |
+| :----------------- | :----------------------------------------------------------- |
+| GL_REPEAT          | 对纹理的默认行为。重复纹理图像。                             |
+| GL_MIRRORED_REPEAT | 和GL_REPEAT一样，但每次重复图片是镜像放置的。                |
+| GL_CLAMP_TO_EDGE   | 纹理坐标会被约束在0到1之间，超出的部分会重复纹理坐标的边缘，产生一种边缘被拉伸的效果。 |
+| GL_CLAMP_TO_BORDER | 超出的坐标为用户指定的边缘颜色。                             |
+
+![image-20241204144349628](C:\Users\windows\AppData\Roaming\Typora\typora-user-images\image-20241204144349628.png)
+
+我们可以使用`glTexParameter*`函数对单独的一个坐标轴来设置选项s,t,r和x，y，z都是等价的
+
+WRAP就是环绕的意思。
+
+```c++
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+```
+
+我们选择GL_CLAMP_TO_BORDER选项，我们还需要指定一个边缘的颜色。这需要使用glTexParameter函数的`fv`后缀形式，用GL_TEXTURE_BORDER_COLOR作为它的选项，并且传递一个float数组作为边缘的颜色值：
+
+```c++
+float borderColor[] = {1.0f, 1.0f, 0.0f, 1.0f};
+glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
+```
+
+## 纹理过滤
+
+>你可以想象你打开一张`.jpg`格式图片，不断放大你会发现它是由无数像素点组成的，这个点就是纹理像素；注意不要和纹理坐标搞混。
+>
+>纹理坐标是你给模型顶点设置的那个数组，OpenGL以这个顶点的纹理坐标数据去查找纹理图像上的像素，然后进行采样提取纹理像素的颜色。
+>
+>纹理坐标通常是浮点值，但是纹理图像的分辨率通常是离散的，所以纹理坐标并不会精确地对应到纹理中的某一个像素点，就需要通过纹理过滤来处理这种不精确的情况。
+
+纹理坐标并不依赖于分辨率，可以是任意的浮点值，所以OpenGL需要知道怎样将纹理像素映射到纹理坐标。
+
+当你拥有一个很大的物体但是纹理的分辨率很低的时候，就要使用纹理过滤功能
+
++ GL_NEAREST（也叫邻近过滤，Nearest Neighbor Filtering）是OpenGL默认的纹理过滤方式。
+
+  ![image-20241204145547781](C:\Users\windows\AppData\Roaming\Typora\typora-user-images\image-20241204145547781.png)
+
++ GL_LINEAR（也叫线性过滤，(Bi)linear Filtering）它会基于纹理坐标附近的纹理像素，计算出一个插值，近似出这些纹理像素之间的颜色。一个纹理像素的中心距离纹理坐标越近，那么这个纹理像素的颜色对最终的样本颜色的贡献越大。
+
+  ![image-20241204145612212](C:\Users\windows\AppData\Roaming\Typora\typora-user-images\image-20241204145612212.png)
+
+在一个很大的物体上应用一张低分辨率的纹理。
+
+![image-20241204145705635](C:\Users\windows\AppData\Roaming\Typora\typora-user-images\image-20241204145705635.png)
+
+使用`GL_NEAREST`会产生颗粒状的图案，我们能够清晰看到组成纹理的像素，但是`GL_LINEAR`能够产生更加平滑的图案，很难看出单个的纹理像素，可以产生更加真实的输出。
+
+我们执行**放大**或者**缩小**操作的时候，可以设置纹理过滤的选项，比如缩小的时候使用临近过滤，而放大的时候使用线性过滤。
+
+```c++
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+```
+
+## 多级渐远纹理
+
+观察者的距离超过一个阈值，OpenGL就会使用不同的多级渐远纹理，选择最适合物体的距离的那个。
+
+![image-20241204150248812](C:\Users\windows\AppData\Roaming\Typora\typora-user-images\image-20241204150248812.png)
+
+OpenGL自身提供了对应的函数`glGenerateMipmap`，能够自动创建多级渐远纹理。
+
+> Mipmap 是一组逐渐减少分辨率的纹理级别，通常用于提高渲染效率和纹理质量，尤其是在进行纹理缩小时。
+
+但是在渲染中切换多级渐远纹理级别的时候，不同级别的多级渐远纹理之间会产生不真实的生硬边界，就像普通的纹理过滤一样。
+
+因此在切换多级渐远纹理的级别时，也可以在不同多级渐远纹理级别之间使用`NEAREST`和`LINEAR`过滤。
+
+| 过滤方式                  | 描述                                                         |
+| :------------------------ | :----------------------------------------------------------- |
+| GL_NEAREST_MIPMAP_NEAREST | 使用最邻近的多级渐远纹理来匹配像素大小，并使用邻近插值进行纹理采样 |
+| GL_LINEAR_MIPMAP_NEAREST  | 使用最邻近的多级渐远纹理级别，并使用线性插值进行采样         |
+| GL_NEAREST_MIPMAP_LINEAR  | 在两个最匹配像素大小的多级渐远纹理之间进行线性插值，使用邻近插值进行采样 |
+| GL_LINEAR_MIPMAP_LINEAR   | 在两个邻近的多级渐远纹理之间使用线性插值，并使用线性插值进行采样 |
+
+很明显，只有在缩小过滤的情况之下，才能应用多级**渐远**纹理过滤选项，否则会报错`GL_INVALID_ENUM`
+
+```c++
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+```
+
+## 加载和创建纹理
+
+我们可以用`stb_image.h`库来进行图像加载。
+
+`stb_image.h`能够加载大部分流行的文件格式，并且能够很简单得整合到你的工程之中。`stb_image.h`可以在[这里](https://github.com/nothings/stb/blob/master/stb_image.h)下载。下载这一个头文件，将它以`stb_image.h`的名字加入你的工程，并另创建一个新的C++文件，输入以下代码：
+
+```c++
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+```
+
+通过定义STB_IMAGE_IMPLEMENTATION，预处理器会修改头文件，让其只包含相关的函数定义源码，等于是将这个头文件变为一个 `.cpp` 文件了。现在只需要在你的程序中包含`stb_image.h`并编译就可以了。
+
+我们使用`stbi_load`函数就可以加载这个文件了。
+
+```c++
+int width, height, nrChannels;
+
+unsigned char *data=  stbi_load("Image_Path", &width, &height, &nrChannels, 0);
+```
+
+这个函数首先接受一个图像文件的位置作为输入。
+
+接下来它需要三个`int`作为它的第二、第三和第四个参数，`stb_image.h`将会用图像的**宽度**、**高度**和**颜色通道的个数**填充这三个变量。我们之后生成纹理的时候会用到的图像的宽度和高度的。
+
+```c++
+std::filesystem::path texturePath = std::filesystem::path(SOLUTION_DIR) / "OpenGL" / "Figure" / "container.jpg";
+int width, height, nrChannels;
+unsigned char* data = stbi_load(texturePath.string().c_str(), &width, &height, &nrChannels, 0);
+
+```
+
+## 生成纹理
+
+和之前OpenGL对象的生成一样，纹理也是使用ID来引用的。
+
+```c++
+unsigned int texture;
+glGenTextures(1, &texture);
+```
+
+同样的生成之后我们需要绑定。
+
+```c++
+glBindTexture(GL_TEXTURE_2D, texture);
+```
+
+纹理可以通过`glTexImage2D`来生成
+
+```c++
+glTexImage2D(GL_TEXTURE_2D,0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+glGenerateMipmap(GL_TEXTURE_2D);
+```
+
+- 第一个参数指定了纹理目标(Target)。**设置为GL_TEXTURE_2D意味着会生成与当前绑定的纹理对象在同一个目标上的纹理**（任何绑定到GL_TEXTURE_1D和GL_TEXTURE_3D的纹理不会受到影响）。
+- 第二个参数为**纹理指定多级渐远纹理的级别**，如果你希望单独手动设置每个多级渐远纹理的级别的话。这里我们填0，也就是**基本级别**。
+- 第三个参数告诉OpenGL我们**希望把纹理储存为何种格式**。我们的图像只有`RGB`值，因此我们也把纹理储存为`RGB`值，也就是**内部存储格式**。
+- 第四个和第五个参数设置最终的纹理的宽度和高度。我们之前加载图像的时候储存了它们，所以我们使用对应的变量。
+- 下个参数应该总是被设为`0`（历史遗留的问题）。
+- 第七第八个参数定义了源图的格式和数据类型。我们使用**RGB值加载**这个图像，并把它们**储存为`char`(byte)数组**，我们将会传入对应值。
+- 最后一个参数是真正的图像数据。
+
+当调用`glTexImage2D`时，当前绑定的纹理对象就会被附加上纹理图像，如果要使用多级纹理的话，那么必须手动设置不同的图像（不断来底层第二个参数），或者在自动生成纹理之后调用`glGenerateMipmap`，这会为当前绑定的纹理自动生成所有需要的多级渐远纹理
+
+当生成了纹理和相应的多级渐远纹理之后，就需要释放内存了。
+
+```c++
+stbi_image_free(data);
+```
+
+---
+
+整个流程如下所示：
+
+```c++
+unsigned int texture;
+glGenTextures(1, &texture);
+glBindTexture(GL_TEXTURE_2D, texture);
+// 为当前绑定的纹理对象设置环绕、过滤方式
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);   
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+// 加载并生成纹理
+int width, height, nrChannels;
+unsigned char *data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+if (data)
+{
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+    glGenerateMipmap(GL_TEXTURE_2D);
+}
+else
+{
+    std::cout << "Failed to load texture" << std::endl;
+}
+stbi_image_free(data);
+```
+
+## 应用纹理
+
+我们需要告知OpenGL如何采样纹理，所以必须更新纹理坐标顶点数据
+
+>因为这里的纹理坐标是2D的，所以只有两个`float`数值，所以是size = 2 
+
+```c++
+// 设置纹理坐标属性
+glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+glEnableVertexAttribArray(2);
+```
+
+```c++
+#version 330 core
+
+layout(location = 0) in vec3 aPos;
+layout(location = 1) in vec3 aColor;
+layout(location = 2) in vec2 aTexCoord;
+
+out vec3 ourColor;
+out vec2 TexCoord;
+void main()
+{
+	gl_Position = vec4(aPos, 1.0);
+	ourColor = aColor;
+	TexCoord = aTexCoord;
+};
+```
+
+片段着色器接下来就会把输出变量`TexCoord`作为输入变量，关键是我们怎么将纹理对象传递给片段着色器呢？GLSL有一个供纹理对象使用的内建数据结构，叫做采样器(Sampler)。
+
+比如`sampler1D`、`sampler3D`，或在我们的例子中的`sampler2D`。我们可以简单声明一个`uniform sampler2D`把一个纹理添加到片段着色器中。
+
+我们使用GLSL内建的`texture`函数来采样纹理的颜色，它第一个参数是纹理采样器，第二个参数是对应的纹理坐标。`texture`函数会使用之前设置的纹理参数对相应的颜色值进行采样。这个片段着色器的输出就是纹理的（插值）纹理坐标上的(过滤后的)颜色。
+
+```c++
+#version 330 core
+out vec4 FragColor;
+
+in vec3 ourColor;
+in vec2 TexCoord;
+
+uniform sampler2D ourTexture;
+
+void main()
+{
+    FragColor = texture(ourTexture, TexCoord);
+    //FragColor = texture(ourTexture, TexCoord) * vec4(ourColor, 1.0);
+}
+```
+
+![image-20241204164930990](C:\Users\windows\AppData\Roaming\Typora\typora-user-images\image-20241204164930990.png)
+
+![image-20241204165038880](C:\Users\windows\AppData\Roaming\Typora\typora-user-images\image-20241204165038880.png)
+
+完整代码：
+
+```c++
+// OpenGL
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+#include <../../../headfile/Shader/Shader.h>
+#include "../../../headfile/stb_image/stb_image.h"
+// c++
+#include <iostream>
+#include <algorithm>
+
+// file
+#include <filesystem>
+
+#define SOLUTION_DIR "D:\\repo\\OpenGL\\OpenGL"
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+	glViewport(0, 0, width, height);
+}
+void processInput(GLFWwindow* window)
+{
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	{
+		glfwSetWindowShouldClose(window, true);
+	}
+}
+int main()
+{
+	glfwInit();
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+	GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL_ForRiver", NULL, NULL);
+	if (window == NULL)
+	{
+		std::cout << "Failed to create GLFW window" << std::endl;
+		glfwTerminate();
+		return -1;
+	}
+	glfwMakeContextCurrent(window);
+
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	{
+		std::cout << "Failed to initialize GLAD" << std::endl;
+		return-1;
+	}
+
+	// 窗口位置X，窗口位置Y，窗口宽度，窗口高度
+	glViewport(0, 0, 800, 600);
+
+	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 
+	//float vertices[] = {
+	//	   -0.5f, -0.5f, 0.0f, // left  
+	//		0.5f, -0.5f, 0.0f, // right 
+	//		0.0f,  0.5f, 0.0f  // top   
+	//};
 
+	//float vertices[] = {
+	//0.5f, 0.5f, 0.0f,   // 右上角
+	//0.5f, -0.5f, 0.0f,  // 右下角
+	//-0.5f, -0.5f, 0.0f, // 左下角
+	//-0.5f, 0.5f, 0.0f   // 左上角
+	//};
 
+	//unsigned int indices[] = {
+	//	// 注意索引从0开始! 
+	//	// 此例的索引(0,1,2,3)就是顶点数组vertices的下标，
+	//	// 这样可以由下标代表顶点组合成矩形
 
+	//	0, 1, 3, // 第一个三角形
+	//	1, 2, 3  // 第二个三角形
+	//};
 
+	float vertices[] = {
+		// positions          // colors           // texture coords
+		 0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f, // top right
+		 0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f, // bottom right
+		-0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f, // bottom left
+		-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f  // top left 
+	};
+	unsigned int indices[] = {
+		0, 1, 3, // first triangle
+		1, 2, 3  // second triangle
+	};
+	// 生成 VAO, VBO, EBO
+	unsigned int VAO, VBO, EBO;
+	glGenVertexArrays(1, &VAO);
+	glGenBuffers(1, &VBO);
+	glGenBuffers(1, &EBO);
+
+	// 绑定 VAO
+	glBindVertexArray(VAO);
+
+	// 绑定 VBO 并传入数据
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	// 绑定 EBO 并传入数据
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+	// 设置位置属性
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+
+	// 设置颜色属性
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+	glEnableVertexAttribArray(1);
+
+	// 设置纹理坐标属性
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+	glEnableVertexAttribArray(2);
+
+	// 解绑
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+	glBindVertexArray(0);
+
+	// 组合解决方案目录和相对路径
+	std::filesystem::path vertexPath = std::filesystem::path(SOLUTION_DIR) / "OpenGL" / "ShaderSource" / "Chapter_5_Texture" / "Shader_5.vs";
+	std::filesystem::path fragmentPath = std::filesystem::path(SOLUTION_DIR) / "OpenGL" / "ShaderSource" / "Chapter_5_Texture" / "Shader_5.fs";
+
+	// 获取绝对路径
+	std::filesystem::path vertexAbsolutePath = std::filesystem::absolute(vertexPath);
+	std::filesystem::path fragmentAbsolutePath = std::filesystem::absolute(fragmentPath);
+
+	Shader shader(vertexAbsolutePath.string().c_str(), fragmentAbsolutePath.string().c_str());
+
+	// 生成纹理对象
+	std::filesystem::path texturePath = std::filesystem::path(SOLUTION_DIR) / "OpenGL" / "Figure" / "container.jpg";
+
+	unsigned int texture;
+	glGenTextures(1, &texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+	// 加载纹理
+	int width, height, nrChannels;
+	unsigned char* data = stbi_load(texturePath.string().c_str(), &width, &height, &nrChannels, 0);
+	if (data)
+	{
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+		glGenerateMipmap(GL_TEXTURE_2D);
+	}
+	else
+	{
+		std::cout << "Failed to load texture" << std::endl;
+	}
+	stbi_image_free(data);
+
+	while (!glfwWindowShouldClose(window))
+	{
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f); // 状态设置函数
+		glClear(GL_COLOR_BUFFER_BIT); // 状态使用函数
+
+		processInput(window);
+		shader.use();
+		
+		glBindTexture(GL_TEXTURE_2D, texture);
+		glBindVertexArray(VAO);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glfwSwapBuffers(window);
+		glfwPollEvents();
+	}
+
+	glfwTerminate();
+	return 0;
+}
+```
+
+## 纹理单元
+
+>让我们可以使用多个纹理
+
+使用`sampler2D`的时候，它虽然是一个uniform，但是我们却不用`glUniform`赋值。
+
+但是我们可以给纹理采样器分配一个位置值，这样的话我们能够在一个片段着色器中设置多个纹理。一个纹理的位置通常称为一个纹理单元。
+
+一个纹理的默认纹理单元是0，是默认的激活纹理单元，所以我们没有分配一个位置值。
+
+通过把纹理单元赋值给采样器，我们可以一次绑定多个纹理，只要我们首先激活对应的纹理单元。就像glBindTexture一样，我们可以使用glActiveTexture激活纹理单元，传入我们需要使用的纹理单元：
+
+```c++
+glActiveTexture(GL_TEXTURE0); // 在绑定纹理之前先激活纹理单元
+glBindTexture(GL_TEXTURE_2D, texture);
+```
+
+激活纹理单元之后，接下来的`glBindTexture`函数调用会绑定这个纹理到当前激活的纹理单元，纹理单元`GL_TEXTURE0`默认总是被激活，所以我们在前面的例子里当我们使用`glBindTexture`的时候，无需激活任何纹理单元。
+
+所以我们现在可以在片段着色器中来接受另一个`sampler`。
+
+```c++
+#version 330 core
+
+in vec3 ourColor;  // 从顶点着色器接收的颜色数据
+in vec2 TexCoord;
+uniform sampler2D texture1;
+uniform sampler2D texture2;
+out vec4 FragColor;  // 片段着色器的输出颜色
+void main()
+{
+    FragColor = mix(texture(texture1, TexCoord), texture(texture2, TexCoord), 0.2);  // 将接收到的颜色值转换为 vec4，并设置 alpha 为 1.0（不透明）
+};
+```
+
+最终输出颜色现在是两个纹理的结合。GLSL内建的mix函数需要接受两个值作为参数，并对它们根据第三个参数进行线性插值。如果第三个值是`0.0`，它会返回第一个输入；如果是`1.0`，会返回第二个输入值。`0.2`会返回`80%`的第一个输入颜色和`20%`的第二个输入颜色，即返回两个纹理的混合色。
+
+现在我们再创建另外一个纹理，这个图片包含了alpha(透明度)通道，因此要使用GL_RGBA参数：
+
+```c++
+unsigned int texture2;
+glGenTextures(1, &texture2);
+glBindTexture(GL_TEXTURE_2D, texture2);
+
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+// 加载图像
+std::filesystem::path awesomefacePath = std::filesystem::path(SOLUTION_DIR) / "OpenGL" / "Figure" / "awesomeface.png";
+data = stbi_load(awesomefacePath.string().c_str(), &width, &height, &nrChannels, 0);
+if (data)
+{
+    // 第一个GL_RGB参数是代表了这个图像在我们OpenGL中的内部存储格式，也就是你希望的存储格式
+    // 第二个GL_RGBA是这个图像的源数据格式
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+	glGenerateMipmap(GL_TEXTURE_2D);
+}
+else
+{
+	std::cout << "Failed to load image." << std::endl;
+}
+stbi_image_free(data);
+```
+
+然后指定对应的激活对应的纹理单元，让它对应到我们的两个纹理中。
+
+```c++
+glActiveTexture(GL_TEXTURE0);
+glBindTexture(GL_TEXTURE_2D, texture1);
+glActiveTexture(GL_TEXTURE1);
+glBindTexture(GL_TEXTURE_2D, texture2);
+
+shader.use();
+unsigned int textureUniformLocation1 = glGetUniformLocation(shader.ID, "texture1");
+unsigned int textureUniformLocation2 = glGetUniformLocation(shader.ID, "texture2");
+glUniform1i(textureUniformLocation1, 0);
+glUniform1i(textureUniformLocation2, 1);
+```
+
+然后渲染就可以了
+
+![image-20241204181316297](C:\Users\windows\AppData\Roaming\Typora\typora-user-images\image-20241204181316297.png)
+
+OpenGL要求y轴0.0的坐标是在图片的底部的，但是图片的y轴0.0坐标通常在顶部，所以在图像加载的时候需要反转一下图像。
+
+在加载图像之前加入
+
+```c++
+stbi_set_flip_vertically_on_load(true);
+```
+
+![image-20241204181421429](C:\Users\windows\AppData\Roaming\Typora\typora-user-images\image-20241204181421429.png)
+
+非常感谢作者的讲解！[纹理 - LearnOpenGL CN](https://learnopengl-cn.github.io/01 Getting started/06 Textures/)

@@ -29,7 +29,10 @@ public:
     {
         glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
     }
-
+    void setMatrix4(const std::string& name, GLsizei size,GLboolean flag ,GLfloat* value)
+    {
+        glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), size, flag, value);
+    }
 private:
     void checkCompileErrors(unsigned int shader, std::string type);
 
