@@ -33,7 +33,7 @@
     <ClCompile Include="Dependencies\GLM\glm\glm.cppm">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\Chapter_6_Transformation\Chapter_6_2.cpp">
+    <ClCompile Include="src\Chapter_7_Coordinate Systems\Chapter_7.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1345,6 +1345,8 @@
     <None Include="ShaderSource\Chapter_6_Transformation\Shader_6_1.vs" />
     <None Include="ShaderSource\Chapter_6_Transformation\Shader_6_2.fs" />
     <None Include="ShaderSource\Chapter_6_Transformation\Shader_6_2.vs" />
+    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7.vs" />
+    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7.fs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\windows\Desktop\container.jpg">

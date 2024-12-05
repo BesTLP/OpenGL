@@ -1,6 +1,6 @@
-﻿  Chapter_6_2.cpp
-D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_6_Transformation\Chapter_6_2.cpp(18,9): warning C4005: “SOLUTION_DIR”: 宏重定义
-      D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_6_Transformation\Chapter_6_2.cpp(18,9):
+﻿  Chapter_7.cpp
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_7_Coordinate Systems\Chapter_7.cpp(18,9): warning C4005: “SOLUTION_DIR”: 宏重定义
+      D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_7_Coordinate Systems\Chapter_7.cpp(18,9):
       之前在命令行上声明的“SOLUTION_DIR”
   
   OpenGL.vcxproj -> D:\repo\OpenGL\OpenGL\x64\Debug\OpenGL.exe

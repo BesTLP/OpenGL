@@ -147,7 +147,7 @@
     <ClCompile Include="headfile\Shader\Shader.cpp" />
     <ClCompile Include="headfile\stb_image\stb_image.cpp" />
     <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\Chapter_6_Transformation\Chapter_6_2.cpp" />
+    <ClCompile Include="src\Chapter_7_Coordinate Systems\Chapter_7.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Environment\stb_image.h" />
@@ -597,6 +597,8 @@
     <None Include="ShaderSource\Chapter_6_Transformation\Shader_6_1.vs" />
     <None Include="ShaderSource\Chapter_6_Transformation\Shader_6_2.fs" />
     <None Include="ShaderSource\Chapter_6_Transformation\Shader_6_2.vs" />
+    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7.fs" />
+    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7.vs" />
     <None Include="ShaderSource\Shader.fs" />
     <None Include="ShaderSource\Shader.vs" />
   </ItemGroup>
