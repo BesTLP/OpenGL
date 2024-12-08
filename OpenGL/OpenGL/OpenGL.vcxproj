@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -141,18 +141,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="headfile\Camera\Camera.cpp" />
     <ClCompile Include="Dependencies\GLAD\src\glad.c" />
     <ClCompile Include="Dependencies\GLM\glm\detail\glm.cpp" />
     <ClCompile Include="Dependencies\GLM\glm\glm.cppm" />
     <ClCompile Include="headfile\Shader\Shader.cpp" />
     <ClCompile Include="headfile\stb_image\stb_image.cpp" />
     <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\Chapter_8_Camera\Chapter_8.cpp" />
+    <ClCompile Include="src\Chapter_7_Coordinate Systems\Chapter_7.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Environment\stb_image.h" />
-    <ClInclude Include="headfile\Camera\Camera.h" />
     <ClInclude Include="Dependencies\GLM\glm\common.hpp" />
     <ClInclude Include="Dependencies\GLM\glm\detail\compute_common.hpp" />
     <ClInclude Include="Dependencies\GLM\glm\detail\compute_vector_decl.hpp" />
@@ -601,14 +599,6 @@
     <None Include="ShaderSource\Chapter_6_Transformation\Shader_6_2.vs" />
     <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7.fs" />
     <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7.vs" />
-    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7_1.fs" />
-    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7_1.vs" />
-    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7_2.fs" />
-    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7_2.vs" />
-    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7_3.fs" />
-    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7_3.vs" />
-    <None Include="ShaderSource\Chapter_8_Camera\Shader_8.fs" />
-    <None Include="ShaderSource\Chapter_8_Camera\Shader_8.vs" />
     <None Include="ShaderSource\Shader.fs" />
     <None Include="ShaderSource\Shader.vs" />
   </ItemGroup>

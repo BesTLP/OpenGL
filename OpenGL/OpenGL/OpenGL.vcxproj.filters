@@ -33,10 +33,7 @@
     <ClCompile Include="Dependencies\GLM\glm\glm.cppm">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\Chapter_8_Camera\Chapter_8.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="headfile\Camera\Camera.cpp">
+    <ClCompile Include="src\Chapter_7_Coordinate Systems\Chapter_7.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -914,9 +911,6 @@
     <ClInclude Include="Dependencies\GLM\glm\vector_relational.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="headfile\Camera\Camera.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ShaderSource\Shader.vs" />
@@ -1353,14 +1347,6 @@
     <None Include="ShaderSource\Chapter_6_Transformation\Shader_6_2.vs" />
     <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7.vs" />
     <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7.fs" />
-    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7_1.fs" />
-    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7_1.vs" />
-    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7_2.fs" />
-    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7_2.vs" />
-    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7_3.fs" />
-    <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7_3.vs" />
-    <None Include="ShaderSource\Chapter_8_Camera\Shader_8.fs" />
-    <None Include="ShaderSource\Chapter_8_Camera\Shader_8.vs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\windows\Desktop\container.jpg">
