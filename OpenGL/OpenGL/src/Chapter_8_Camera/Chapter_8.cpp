@@ -135,8 +135,8 @@ int main()
 	glEnableVertexAttribArray(1);
 
 	// 组合解决方案目录和相对路径
-	std::filesystem::path vertexPath = std::filesystem::path(SOLUTION_DIR) / "OpenGL" / "ShaderSource" / "Chapter_8_Camera" / "Shader_8.vs";
-	std::filesystem::path fragmentPath = std::filesystem::path(SOLUTION_DIR) / "OpenGL" / "ShaderSource" / "Chapter_8_Camera" / "Shader_8.fs";
+	std::filesystem::path vertexPath = std::filesystem::path(SOLUTION_DIR) / "OpenGL" / "ShaderSource" / "Chapter_9_Color" / "Shader_9.vs";
+	std::filesystem::path fragmentPath = std::filesystem::path(SOLUTION_DIR) / "OpenGL" / "ShaderSource" / "Chapter_9_Color" / "Shader_9.fs";
 
 	// 获取绝对路径
 	std::filesystem::path vertexAbsolutePath = std::filesystem::absolute(vertexPath);

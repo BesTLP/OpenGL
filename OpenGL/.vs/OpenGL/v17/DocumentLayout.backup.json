@@ -3,108 +3,28 @@
   "WorkspaceRootPath": "D:\\repo\\OpenGL\\OpenGL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_7_Coordinate Systems\\Chapter_7.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\src\\Chapter_7_Coordinate Systems\\Chapter_7.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_9_Color\\Chapter_9.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\src\\Chapter_9_Color\\Chapter_9.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_7_Coordinate Systems\\Shader_7.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_7_Coordinate Systems\\Shader_7.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_7_Coordinate Systems\\Shader_7.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_7_Coordinate Systems\\Shader_7.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\Shader\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\headfile\\Shader\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_6_Transformation\\Shader_6.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_6_Transformation\\Shader_6.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_6_Transformation\\Shader_6.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_6_Transformation\\Shader_6.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_5_Texture\\Chapter_5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGL\\src\\Chapter_5_Texture\\Chapter_5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLM\\glm\\glm.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\Dependencies\\GLM\\glm\\glm.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5_4.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5_4.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5_1.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5_1.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Shader.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Shader.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\src\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\stb_image\\stb_image.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\headfile\\stb_image\\stb_image.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\stb_image\\stb_image.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\headfile\\stb_image\\stb_image.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLAD\\src\\glad.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\Dependencies\\GLAD\\src\\glad.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGL\\headfile\\Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGL\\headfile\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercide_3\\Exercide3.3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGL\\src\\Exercide_3\\Exercide3.3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercide_3\\Exercise3.2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGL\\src\\Exercide_3\\Exercise3.2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercide_3\\Exercise3.1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGL\\src\\Exercide_3\\Exercise3.1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_5_Texture\\Chatper_5_3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGL\\src\\Chapter_5_Texture\\Chatper_5_3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_5_Texture\\Chatper_5_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGL\\src\\Chapter_5_Texture\\Chatper_5_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -114,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -122,318 +42,81 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Shader_7.fs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_7_Coordinate Systems\\Shader_7.fs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_7_Coordinate Systems\\Shader_7.fs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_7_Coordinate Systems\\Shader_7.fs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_7_Coordinate Systems\\Shader_7.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-05T11:04:48.753Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Shader_7.vs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_7_Coordinate Systems\\Shader_7.vs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_7_Coordinate Systems\\Shader_7.vs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_7_Coordinate Systems\\Shader_7.vs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_7_Coordinate Systems\\Shader_7.vs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-05T11:04:39.837Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Chapter_7.cpp",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_7_Coordinate Systems\\Chapter_7.cpp",
-              "RelativeDocumentMoniker": "OpenGL\\src\\Chapter_7_Coordinate Systems\\Chapter_7.cpp",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_7_Coordinate Systems\\Chapter_7.cpp*",
-              "RelativeToolTip": "OpenGL\\src\\Chapter_7_Coordinate Systems\\Chapter_7.cpp*",
-              "ViewState": "AgIAAP8AAAAAAAAAAAAkwAwBAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-05T08:14:36.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Shader_6.fs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_6_Transformation\\Shader_6.fs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_6_Transformation\\Shader_6.fs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_6_Transformation\\Shader_6.fs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_6_Transformation\\Shader_6.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-05T07:22:13.064Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Shader.h",
               "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\Shader\\Shader.h",
               "RelativeDocumentMoniker": "OpenGL\\headfile\\Shader\\Shader.h",
               "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\Shader\\Shader.h",
               "RelativeToolTip": "OpenGL\\headfile\\Shader\\Shader.h",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAC8AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-05T07:09:59.39Z"
+              "WhenOpened": "2024-12-15T07:56:05.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Shader_Light_9.fs",
+              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.fs",
+              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.fs",
+              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.fs",
+              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-15T07:50:54.642Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Shader_6.vs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_6_Transformation\\Shader_6.vs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_6_Transformation\\Shader_6.vs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_6_Transformation\\Shader_6.vs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_6_Transformation\\Shader_6.vs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
+              "Title": "Shader_Light_9.vs",
+              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.vs",
+              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.vs",
+              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.vs",
+              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.vs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwoAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-05T07:08:23.257Z"
+              "WhenOpened": "2024-12-15T07:50:50.025Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "glm.hpp",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLM\\glm\\glm.hpp",
-              "RelativeDocumentMoniker": "OpenGL\\Dependencies\\GLM\\glm\\glm.hpp",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLM\\glm\\glm.hpp",
-              "RelativeToolTip": "OpenGL\\Dependencies\\GLM\\glm\\glm.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-05T06:57:27.769Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Chapter_5.cpp",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_5_Texture\\Chapter_5.cpp",
-              "RelativeDocumentMoniker": "OpenGL\\src\\Chapter_5_Texture\\Chapter_5.cpp",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_5_Texture\\Chapter_5.cpp",
-              "RelativeToolTip": "OpenGL\\src\\Chapter_5_Texture\\Chapter_5.cpp",
-              "ViewState": "AgIAADkAAAAAAAAAAADwv0oAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-05T06:04:26.777Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Chatper_5_3.cpp",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_5_Texture\\Chatper_5_3.cpp",
-              "RelativeDocumentMoniker": "OpenGL\\src\\Chapter_5_Texture\\Chatper_5_3.cpp",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_5_Texture\\Chatper_5_3.cpp",
-              "RelativeToolTip": "OpenGL\\src\\Chapter_5_Texture\\Chatper_5_3.cpp",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAkwHMAAACJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-05T06:03:37.384Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Chatper_5_1.cpp",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_5_Texture\\Chatper_5_1.cpp",
-              "RelativeDocumentMoniker": "OpenGL\\src\\Chapter_5_Texture\\Chatper_5_1.cpp",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_5_Texture\\Chatper_5_1.cpp",
-              "RelativeToolTip": "OpenGL\\src\\Chapter_5_Texture\\Chatper_5_1.cpp",
-              "ViewState": "AgIAAIcAAAAAAAAAAADwv1QAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-05T05:35:10.529Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Shader_5_4.fs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5_4.fs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5_4.fs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5_4.fs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5_4.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwUAAAAbAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Shader_9.vs",
+              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.vs",
+              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.vs",
+              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.vs",
+              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.vs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-05T05:34:32.274Z"
+              "WhenOpened": "2024-12-15T07:48:26.449Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Shader_5_1.fs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5_1.fs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5_1.fs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5_1.fs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5_1.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Shader_9.fs",
+              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.fs",
+              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.fs",
+              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.fs",
+              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-05T05:13:09.878Z"
+              "WhenOpened": "2024-12-15T07:48:25.834Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Shader.fs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Shader.fs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Shader.fs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Shader.fs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Shader.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-04T08:47:17.062Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Shader_5.vs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5.vs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5.vs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5.vs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5.vs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-04T08:12:43.617Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Shader_5.fs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5.fs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5.fs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5.fs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_5_Texture\\Shader_5.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-04T08:12:39.297Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "stb_image.cpp",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\stb_image\\stb_image.cpp",
-              "RelativeDocumentMoniker": "OpenGL\\headfile\\stb_image\\stb_image.cpp",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\stb_image\\stb_image.cpp",
-              "RelativeToolTip": "OpenGL\\headfile\\stb_image\\stb_image.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAWAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Chapter_9.cpp",
+              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_9_Color\\Chapter_9.cpp",
+              "RelativeDocumentMoniker": "OpenGL\\src\\Chapter_9_Color\\Chapter_9.cpp",
+              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_9_Color\\Chapter_9.cpp",
+              "RelativeToolTip": "OpenGL\\src\\Chapter_9_Color\\Chapter_9.cpp",
+              "ViewState": "AgIAABEAAAAAAAAAAAAEwBsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-04T07:14:27.728Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "stb_image.h",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\stb_image\\stb_image.h",
-              "RelativeDocumentMoniker": "OpenGL\\headfile\\stb_image\\stb_image.h",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\stb_image\\stb_image.h",
-              "RelativeToolTip": "OpenGL\\headfile\\stb_image\\stb_image.h",
-              "ViewState": "AgIAAEUFAAAAAAAAAAAowFkFAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-04T07:12:34.753Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Exercise3.2.cpp",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercide_3\\Exercise3.2.cpp",
-              "RelativeDocumentMoniker": "OpenGL\\src\\Exercide_3\\Exercise3.2.cpp",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercide_3\\Exercise3.2.cpp",
-              "RelativeToolTip": "OpenGL\\src\\Exercide_3\\Exercise3.2.cpp",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAowKAAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-03T06:26:51.896Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Exercise3.1.cpp",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercide_3\\Exercise3.1.cpp",
-              "RelativeDocumentMoniker": "OpenGL\\src\\Exercide_3\\Exercise3.1.cpp",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercide_3\\Exercise3.1.cpp",
-              "RelativeToolTip": "OpenGL\\src\\Exercide_3\\Exercise3.1.cpp",
-              "ViewState": "AgIAADEAAAAAAAAAAAAowI4AAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-03T06:14:55.403Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Application.cpp",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Application.cpp",
-              "RelativeDocumentMoniker": "OpenGL\\src\\Application.cpp",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Application.cpp",
-              "RelativeToolTip": "OpenGL\\src\\Application.cpp",
-              "ViewState": "AgIAAHoAAAAAAAAAAADwv5IAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-03T06:32:47.283Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Exercide3.3.cpp",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercide_3\\Exercide3.3.cpp",
-              "RelativeDocumentMoniker": "OpenGL\\src\\Exercide_3\\Exercide3.3.cpp",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Exercide_3\\Exercide3.3.cpp",
-              "RelativeToolTip": "OpenGL\\src\\Exercide_3\\Exercide3.3.cpp",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAowLwAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-03T06:53:39.759Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Shader.h",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\Shader.h",
-              "RelativeDocumentMoniker": "OpenGL\\headfile\\Shader.h",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\Shader.h",
-              "RelativeToolTip": "OpenGL\\headfile\\Shader.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-03T08:55:55.592Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Shader.cpp",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\Shader.cpp",
-              "RelativeDocumentMoniker": "OpenGL\\headfile\\Shader.cpp",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\Shader.cpp",
-              "RelativeToolTip": "OpenGL\\headfile\\Shader.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-03T09:07:05.337Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "glad.h",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h",
-              "RelativeDocumentMoniker": "OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h",
-              "RelativeToolTip": "OpenGL\\Dependencies\\GLAD\\include\\glad\\glad.h",
-              "ViewState": "AgIAAH4FAAAAAAAAAAAvwJIFAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-02T09:06:08.633Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "glew.h",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h",
-              "RelativeDocumentMoniker": "OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h",
-              "RelativeToolTip": "OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h",
-              "ViewState": "AgIAAGkEAAAAAAAAAAAvwHwEAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-30T03:27:13.53Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "glad.c",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLAD\\src\\glad.c",
-              "RelativeDocumentMoniker": "OpenGL\\Dependencies\\GLAD\\src\\glad.c",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLAD\\src\\glad.c",
-              "RelativeToolTip": "OpenGL\\Dependencies\\GLAD\\src\\glad.c",
-              "ViewState": "AgIAAL0FAAAAAAAAAAAAwM8FAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-12-02T09:06:01.649Z"
+              "WhenOpened": "2024-12-15T07:48:25.079Z",
+              "EditorCaption": ""
             }
           ]
         }

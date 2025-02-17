@@ -1,6 +1,13 @@
-﻿  Chapter_7.cpp
-D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_7_Coordinate Systems\Chapter_7.cpp(18,9): warning C4005: “SOLUTION_DIR”: 宏重定义
-      D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_7_Coordinate Systems\Chapter_7.cpp(18,9):
+﻿  Chapter_9.cpp
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9.cpp(19,9): warning C4005: “SOLUTION_DIR”: 宏重定义
+      D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9.cpp(19,9):
       之前在命令行上声明的“SOLUTION_DIR”
   
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9.cpp(222,11): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9.cpp(223,11): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9.cpp(227,16): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9.cpp(228,16): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9.cpp(229,10): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9.cpp(230,10): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9.cpp(236,28): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
   OpenGL.vcxproj -> D:\repo\OpenGL\OpenGL\x64\Debug\OpenGL.exe
