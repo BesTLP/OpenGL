@@ -33,7 +33,7 @@
     <ClCompile Include="Dependencies\GLM\glm\glm.cppm">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\Chapter_9_Color\Chapter_9.cpp">
+    <ClCompile Include="src\Chapter_9_Color\Chapter_9_Material.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1351,6 +1351,8 @@
     <None Include="ShaderSource\Chapter_9_Color\Shader_9.vs" />
     <None Include="ShaderSource\Chapter_9_Color\Shader_Light_9.fs" />
     <None Include="ShaderSource\Chapter_9_Color\Shader_Light_9.vs" />
+    <None Include="ShaderSource\Chapter_9_Color\Shader_9_Material.fs" />
+    <None Include="ShaderSource\Chapter_9_Color\Shader_9_Material.vs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\windows\Desktop\container.jpg">

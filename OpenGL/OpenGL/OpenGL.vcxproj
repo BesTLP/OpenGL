@@ -147,7 +147,7 @@
     <ClCompile Include="headfile\Shader\Shader.cpp" />
     <ClCompile Include="headfile\stb_image\stb_image.cpp" />
     <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\Chapter_9_Color\Chapter_9.cpp" />
+    <ClCompile Include="src\Chapter_9_Color\Chapter_9_Material.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Environment\stb_image.h" />
@@ -601,6 +601,8 @@
     <None Include="ShaderSource\Chapter_7_Coordinate Systems\Shader_7.vs" />
     <None Include="ShaderSource\Chapter_9_Color\Shader_9.fs" />
     <None Include="ShaderSource\Chapter_9_Color\Shader_9.vs" />
+    <None Include="ShaderSource\Chapter_9_Color\Shader_9_Material.fs" />
+    <None Include="ShaderSource\Chapter_9_Color\Shader_9_Material.vs" />
     <None Include="ShaderSource\Chapter_9_Color\Shader_Light_9.vs" />
     <None Include="ShaderSource\Chapter_9_Color\Shader_Light_9.fs" />
     <None Include="ShaderSource\Shader.fs" />
