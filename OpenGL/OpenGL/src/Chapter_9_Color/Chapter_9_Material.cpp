@@ -180,7 +180,7 @@ int main()
 		// cyan plastic Material
 		objectShader.setVec3("material.ambient", 0.0f, 0.1f, 0.06f);
 		objectShader.setVec3("material.diffuse", 0.0f, 0.50980392f, 0.50980392f);
-		objectShader.setVec3("material.specular", 0.50196078f, 0.50196078f, 0.50196078f);
+		objectShader.setVec3("material.specular", 0.50196078f, 0.50196078f, 0.50196078f);	
 		objectShader.setFloat("material.shininess", 0.25f);
 
 		objectShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
