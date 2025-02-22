@@ -1,13 +1,15 @@
-﻿  Chapter_9_Cast.cpp
-D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Cast.cpp(19,9): warning C4005: “SOLUTION_DIR”: 宏重定义
-      D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Cast.cpp(19,9):
+﻿  Chapter_9_Multiple lights.cpp
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Multiple lights.cpp(19,9): warning C4005: “SOLUTION_DIR”: 宏重定义
+      D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Multiple lights.cpp(19,9):
       之前在命令行上声明的“SOLUTION_DIR”
   
-D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Cast.cpp(281,11): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Cast.cpp(282,11): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Cast.cpp(286,16): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Cast.cpp(287,16): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Cast.cpp(288,10): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Cast.cpp(289,10): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Cast.cpp(295,28): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Multiple lights.cpp(365,11): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Multiple lights.cpp(366,11): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Multiple lights.cpp(370,16): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Multiple lights.cpp(371,16): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Multiple lights.cpp(372,10): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Multiple lights.cpp(373,10): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\repo\OpenGL\OpenGL\OpenGL\src\Chapter_9_Color\Chapter_9_Multiple lights.cpp(379,28): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+x64\Debug\glm.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
   OpenGL.vcxproj -> D:\repo\OpenGL\OpenGL\x64\Debug\OpenGL.exe

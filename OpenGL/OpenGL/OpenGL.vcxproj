@@ -147,7 +147,7 @@
     <ClCompile Include="headfile\Shader\Shader.cpp" />
     <ClCompile Include="headfile\stb_image\stb_image.cpp" />
     <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\Chapter_9_Color\Chapter_9_Cast.cpp" />
+    <ClCompile Include="src\Chapter_9_Color\Chapter_9_Multiple lights.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Environment\stb_image.h" />
@@ -603,6 +603,8 @@
     <None Include="ShaderSource\Chapter_9_Color\Shader_9.vs" />
     <None Include="ShaderSource\Chapter_9_Color\Shader_9_Cast.fs" />
     <None Include="ShaderSource\Chapter_9_Color\Shader_9_Cast.vs" />
+    <None Include="ShaderSource\Chapter_9_Color\Shader_9_Cast_Multiple lights.fs" />
+    <None Include="ShaderSource\Chapter_9_Color\Shader_9_Cast_Multiple lights.vs" />
     <None Include="ShaderSource\Chapter_9_Color\Shader_9_DiffuseMap.fs" />
     <None Include="ShaderSource\Chapter_9_Color\Shader_9_DiffuseMap.vs" />
     <None Include="ShaderSource\Chapter_9_Color\Shader_9_Material.fs" />

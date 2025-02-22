@@ -3,63 +3,20 @@
   "WorkspaceRootPath": "D:\\repo\\OpenGL\\OpenGL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_9_Color\\Chapter_9_Cast.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\src\\Chapter_9_Color\\Chapter_9_Cast.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_9_Color\\Chapter_9_DiffuseMap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\src\\Chapter_9_Color\\Chapter_9_DiffuseMap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_DiffuseMap.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_DiffuseMap.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Material.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Material.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_9_Color\\Chapter_9_Multiple lights.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\src\\Chapter_9_Color\\Chapter_9_Multiple lights.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\Shader\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\headfile\\Shader\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_9_Color\\Chapter_9.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\src\\Chapter_9_Color\\Chapter_9.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast_Multiple lights.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast_Multiple lights.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_DiffuseMap.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_DiffuseMap.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Material.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Material.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\gl\\GL.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast_Multiple lights.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C5BC5598-DBE9-4CD1-8888-C59F8EA47742}|OpenGL\\OpenGL.vcxproj|solutionrelative:OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast_Multiple lights.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -69,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -77,189 +34,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Chapter_9_DiffuseMap.cpp",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_9_Color\\Chapter_9_DiffuseMap.cpp",
-              "RelativeDocumentMoniker": "OpenGL\\src\\Chapter_9_Color\\Chapter_9_DiffuseMap.cpp",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_9_Color\\Chapter_9_DiffuseMap.cpp",
-              "RelativeToolTip": "OpenGL\\src\\Chapter_9_Color\\Chapter_9_DiffuseMap.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvxcAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-20T07:37:34.041Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Shader_9_Material.fs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Material.fs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Material.fs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Material.fs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Material.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvxgAAAASAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Shader_9_Cast_Multiple lights.vs",
+              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast_Multiple lights.vs",
+              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast_Multiple lights.vs",
+              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast_Multiple lights.vs",
+              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast_Multiple lights.vs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvw4AAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-02-20T07:16:27.177Z",
+              "WhenOpened": "2025-02-21T06:01:23.42Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Shader_9_Cast.fs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast.fs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast.fs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast.fs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Title": "Shader_9_Cast_Multiple lights.fs",
+              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast_Multiple lights.fs",
+              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast_Multiple lights.fs",
+              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast_Multiple lights.fs",
+              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Cast_Multiple lights.fs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAAAGsAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-02-20T07:06:37.818Z",
+              "WhenOpened": "2025-02-21T06:00:35.039Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Chapter_9_Cast.cpp",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_9_Color\\Chapter_9_Cast.cpp",
-              "RelativeDocumentMoniker": "OpenGL\\src\\Chapter_9_Color\\Chapter_9_Cast.cpp",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_9_Color\\Chapter_9_Cast.cpp",
-              "RelativeToolTip": "OpenGL\\src\\Chapter_9_Color\\Chapter_9_Cast.cpp",
-              "ViewState": "AgIAAK0AAAAAAAAAAAAqwMwAAABFAAAAAAAAAA==",
+              "Title": "Chapter_9_Multiple lights.cpp",
+              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_9_Color\\Chapter_9_Multiple lights.cpp",
+              "RelativeDocumentMoniker": "OpenGL\\src\\Chapter_9_Color\\Chapter_9_Multiple lights.cpp",
+              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_9_Color\\Chapter_9_Multiple lights.cpp",
+              "RelativeToolTip": "OpenGL\\src\\Chapter_9_Color\\Chapter_9_Multiple lights.cpp",
+              "ViewState": "AgIAABABAAAAAAAAAAAiwB8BAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-20T07:06:29.211Z",
+              "WhenOpened": "2025-02-21T06:00:33.592Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "GL.h",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\gl\\GL.h",
-              "ToolTip": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\gl\\GL.h",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAAAC8AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-19T02:46:38.273Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "glew.h",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h",
-              "RelativeDocumentMoniker": "OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h",
-              "RelativeToolTip": "OpenGL\\Dependencies\\GLEW\\include\\GL\\glew.h",
-              "ViewState": "AgIAAI0CAAAAAAAAAAAYwJECAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-19T02:46:26.941Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Shader_9_DiffuseMap.fs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_DiffuseMap.fs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_DiffuseMap.fs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_DiffuseMap.fs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_DiffuseMap.fs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACYAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-02-19T02:16:19.49Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Shader_9_DiffuseMap.vs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_DiffuseMap.vs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_DiffuseMap.vs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_DiffuseMap.vs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_DiffuseMap.vs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-02-19T02:16:41.672Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Shader_9.fs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.fs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.fs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.fs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-15T07:48:25.834Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "Shader.h",
               "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\Shader\\Shader.h",
               "RelativeDocumentMoniker": "OpenGL\\headfile\\Shader\\Shader.h",
               "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\headfile\\Shader\\Shader.h",
               "RelativeToolTip": "OpenGL\\headfile\\Shader\\Shader.h",
-              "ViewState": "AgIAABcAAAAAAAAAAAAqwDUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAApwC8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-15T07:56:05.478Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Shader_Light_9.vs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.vs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.vs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.vs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.vs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwoAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-15T07:50:50.025Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Shader_Light_9.fs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.fs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.fs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.fs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_Light_9.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-15T07:50:54.642Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Shader_9_Material.vs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Material.vs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Material.vs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Material.vs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9_Material.vs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-02-18T01:33:05.275Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Shader_9.vs",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.vs",
-              "RelativeDocumentMoniker": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.vs",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.vs",
-              "RelativeToolTip": "OpenGL\\ShaderSource\\Chapter_9_Color\\Shader_9.vs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-15T07:48:26.449Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Chapter_9.cpp",
-              "DocumentMoniker": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_9_Color\\Chapter_9.cpp",
-              "RelativeDocumentMoniker": "OpenGL\\src\\Chapter_9_Color\\Chapter_9.cpp",
-              "ToolTip": "D:\\repo\\OpenGL\\OpenGL\\OpenGL\\src\\Chapter_9_Color\\Chapter_9.cpp",
-              "RelativeToolTip": "OpenGL\\src\\Chapter_9_Color\\Chapter_9.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJcAAABzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-18T01:46:34.084Z",
               "EditorCaption": ""
             }
           ]
